@@ -2,14 +2,27 @@
 
 import { useState } from 'react'
 
+interface AssessmentData {
+  answers: Record<number, string>
+  recommendation: Recommendation
+  completedAt: string
+}
+
+interface Recommendation {
+  treatment: string
+  technology: string
+  description: string
+  benefits: string[]
+}
+
 interface AssessmentToolProps {
   onBookingClick?: () => void
-  onAssessmentComplete?: (data: any) => void
+  onAssessmentComplete?: (data: AssessmentData) => void
 }
 
 export default function AssessmentTool({ onBookingClick, onAssessmentComplete }: AssessmentToolProps) {
   const [step, setStep] = useState(1)
-  const [answers, setAnswers] = useState<any>({})
+  const [answers, setAnswers] = useState<Record<number, string>>({})
 
   const questions = [
     {
@@ -64,7 +77,7 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
     }
   }
 
-  const getRecommendation = (assessmentAnswers: any = answers) => {
+  const getRecommendation = (assessmentAnswers: Record<number, string> = answers): Recommendation => {
     const concern = assessmentAnswers[1]
     const skinType = assessmentAnswers[2]
     const downtime = assessmentAnswers[3]
