@@ -29,6 +29,7 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
       id: 1,
       question: "What is your primary skin concern?",
       options: [
+        { value: 'tightening', label: 'Skin tightening & laxity', icon: '💪' },
         { value: 'texture', label: 'Skin texture & tone', icon: '✨' },
         { value: 'pigmentation', label: 'Pigmentation & sun damage', icon: '☀️' },
         { value: 'acne', label: 'Acne & acne scars', icon: '🌟' },
@@ -83,6 +84,15 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
     const downtime = assessmentAnswers[3]
 
     // Recommendations based on concern and preferences
+    if (concern === 'tightening') {
+      return {
+        treatment: 'Skin Tightening & Rejuvenation',
+        technology: 'ClearLift Pro + Non-Ablative Laser',
+        description: 'Non-invasive skin tightening using Q-Switch and Er:Glass 1540nm laser to stimulate deep collagen production for firmer, more youthful skin with no downtime.',
+        benefits: ['Non-invasive', 'Collagen stimulation', 'All skin types I-VI']
+      }
+    }
+
     if (concern === 'tattoo') {
       return {
         treatment: 'Q-Switch Laser Tattoo Removal',
@@ -171,16 +181,16 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-premium p-7 sm:p-10 md:p-12">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-premium p-5 sm:p-8 md:p-10 lg:p-12">
           {step <= questions.length && currentQuestion ? (
             <>
               {/* Progress Bar */}
               <div className="mb-6 sm:mb-8">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs sm:text-sm text-neutral-600">Step {step} of {questions.length}</span>
-                  <span className="text-xs sm:text-sm text-neutral-600">{Math.round((step / questions.length) * 100)}%</span>
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-xs sm:text-sm text-neutral-600 font-medium">Step {step} of {questions.length}</span>
+                  <span className="text-xs sm:text-sm text-primary-600 font-semibold">{Math.round((step / questions.length) * 100)}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-1.5 sm:h-2">
+                <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5">
                   <div
                     className="bg-gradient-to-r from-primary-400 to-primary-600 h-full rounded-full transition-all duration-500"
                     style={{ width: `${(step / questions.length) * 100}%` }}
@@ -194,15 +204,15 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
               </div>
 
               {/* Options */}
-              <div className={`grid gap-4 sm:gap-5 ${currentQuestion.options.length > 4 ? 'grid-cols-2 sm:grid-cols-3' : 'grid-cols-1 sm:grid-cols-2'}`}>
+              <div className={`grid gap-3 sm:gap-4 ${currentQuestion.options.length > 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 sm:grid-cols-2'}`}>
                 {currentQuestion?.options.map((option) => (
                   <button
                     key={option.value}
                     onClick={() => handleAnswer(option.value)}
-                    className="group relative bg-white border-2 border-gray-200 rounded-xl sm:rounded-2xl p-5 sm:p-6 hover:border-primary-500 hover:shadow-lg transition-all duration-300 hover:scale-105 flex sm:flex-col items-center sm:items-center text-left sm:text-center min-h-[72px] sm:min-h-[120px]"
+                    className="group relative bg-white border-2 border-gray-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:border-primary-500 hover:shadow-lg transition-all duration-300 sm:hover:scale-105 active:scale-[0.98] flex items-center text-left min-h-[60px] sm:min-h-[72px]"
                   >
-                    <div className="text-3xl sm:text-4xl mr-4 sm:mr-0 sm:mb-3">{option.icon}</div>
-                    <p className="font-medium text-sm sm:text-base text-neutral-700 group-hover:text-primary-600">
+                    <div className="text-2xl sm:text-3xl mr-3 sm:mr-4 flex-shrink-0">{option.icon}</div>
+                    <p className="font-medium text-sm sm:text-base text-neutral-700 group-hover:text-primary-600 leading-tight">
                       {option.label}
                     </p>
                   </button>

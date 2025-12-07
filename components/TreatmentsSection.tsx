@@ -5,6 +5,15 @@ interface TreatmentsSectionProps {
 export default function TreatmentsSection({ onBookingClick }: TreatmentsSectionProps) {
   const treatments = [
     {
+      icon: '💪',
+      title: 'Skin Tightening & Rejuvenation',
+      description: 'Non-invasive skin tightening and collagen stimulation for firmer, younger-looking skin',
+      features: ['Skin laxity', 'Collagen stimulation', 'Face & body contouring', 'All skin types'],
+      price: 'From £POC',
+      gradient: 'from-primary-500 to-primary-700',
+      popular: true
+    },
+    {
       icon: '✨',
       title: 'Skin Resurfacing',
       description: 'Transform your skin texture and tone with advanced ablative and non-ablative treatments',
@@ -19,16 +28,7 @@ export default function TreatmentsSection({ onBookingClick }: TreatmentsSectionP
       description: 'Target unwanted pigmentation, sun damage, and achieve an even skin tone',
       features: ['Age spots', 'Sun damage', 'Melasma', 'Freckles'],
       price: 'From £POC',
-      gradient: 'from-primary-500 to-primary-700',
-      popular: true
-    },
-    {
-      icon: '💫',
-      title: 'Vascular Lesions',
-      description: 'Effectively treat spider veins, rosacea, and other vascular concerns',
-      features: ['Spider veins', 'Rosacea', 'Broken capillaries', 'Facial redness'],
-      price: 'From £POC',
-      gradient: 'from-primary-400 to-primary-600',
+      gradient: 'from-primary-500 to-primary-600',
       popular: false
     },
     {
@@ -36,6 +36,15 @@ export default function TreatmentsSection({ onBookingClick }: TreatmentsSectionP
       title: 'Acne & Acne Scars',
       description: 'Combat active acne and reduce scarring with targeted laser therapy',
       features: ['Active acne', 'Acne scarring', 'Skin texture', 'Oil control'],
+      price: 'From £POC',
+      gradient: 'from-primary-400 to-primary-600',
+      popular: false
+    },
+    {
+      icon: '💫',
+      title: 'Vascular Lesions',
+      description: 'Effectively treat spider veins, rosacea, and other vascular concerns',
+      features: ['Spider veins', 'Rosacea', 'Broken capillaries', 'Facial redness'],
       price: 'From £POC',
       gradient: 'from-primary-500 to-primary-600',
       popular: false
@@ -46,7 +55,7 @@ export default function TreatmentsSection({ onBookingClick }: TreatmentsSectionP
       description: 'Safe and effective permanent hair reduction for all skin types',
       features: ['Face & body', 'All skin types I-VI', 'SHR technology', 'Large areas'],
       price: 'From £POC',
-      gradient: 'from-primary-400 to-primary-700',
+      gradient: 'from-primary-400 to-primary-600',
       popular: false
     },
     {
@@ -55,7 +64,7 @@ export default function TreatmentsSection({ onBookingClick }: TreatmentsSectionP
       description: 'Advanced Q-Switch technology for safe and effective tattoo removal',
       features: ['Multi-colour tattoos', 'Professional & amateur', 'Minimal scarring', 'Gradual fading'],
       price: 'From £POC',
-      gradient: 'from-primary-500 to-primary-600',
+      gradient: 'from-primary-400 to-primary-500',
       popular: false
     }
   ]
@@ -142,12 +151,12 @@ export default function TreatmentsSection({ onBookingClick }: TreatmentsSectionP
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
+              { icon: '💪', name: 'Skin Tightening' },
               { icon: '✨', name: 'Skin Resurfacing' },
               { icon: '🎨', name: 'Pigmentation' },
-              { icon: '💪', name: 'Skin Tightening' },
+              { icon: '🌸', name: 'Acne & Scars' },
               { icon: '❤️', name: 'Vascular' },
-              { icon: '💫', name: 'Hair Removal' },
-              { icon: '🌸', name: 'Acne & Scars' }
+              { icon: '💫', name: 'Hair Removal' }
             ].map((category, index) => (
               <div
                 key={index}
