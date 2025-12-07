@@ -12,26 +12,8 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
 
   const results = [
     {
-      title: 'Tattoo Removal',
-      description: 'Q-Switch laser precisely targets tattoo pigments for safe and effective removal with minimal scarring',
-      treatmentArea: 'Body',
-      technology: 'Q-Switch Nd:YAG',
-      beforeImage: '/images/ba/ba-1-before.jpg',
-      afterImage: '/images/ba/ba-1-after.jpg',
-      hasRealImage: true
-    },
-    {
-      title: 'Acne & Acne Scars',
-      description: 'Dramatic improvement in active acne and scarring using ClearSkin Pro non-ablative laser technology',
-      treatmentArea: 'Face',
-      technology: 'ClearSkin Pro',
-      beforeImage: '/images/ba/ba-2-before.jpg',
-      afterImage: '/images/ba/ba-2-after.jpg',
-      hasRealImage: true
-    },
-    {
       title: 'Bio-Boost Skin Rejuvenation',
-      description: 'ELLE Award-winning Bio-Boost treatment for visible improvement in skin tone, texture and redness',
+      description: 'ELLE Award-winning Bio-Boost treatment for visible improvement in skin tone, texture and firmness',
       treatmentArea: 'Full Face',
       technology: 'Bio-Boost',
       beforeImage: '/images/ba/ba-3-before.jpg',
@@ -39,12 +21,12 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
       hasRealImage: true
     },
     {
-      title: 'Active Acne Treatment',
-      description: 'Effective treatment targeting acne-causing bacteria and inflammation for clearer, healthier skin',
-      treatmentArea: 'Face',
-      technology: 'Er:Glass 1540nm',
-      beforeImage: '/images/ba/ba-4-before.jpg',
-      afterImage: '/images/ba/ba-4-after.jpg',
+      title: 'Skin Texture & Tone',
+      description: 'Comprehensive improvement in overall skin quality, texture and pigmentation irregularities',
+      treatmentArea: 'Face & Neck',
+      technology: 'Multi-Technology',
+      beforeImage: '/images/ba/ba-6-before.jpg',
+      afterImage: '/images/ba/ba-6-after.jpg',
       hasRealImage: true
     },
     {
@@ -57,12 +39,30 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
       hasRealImage: true
     },
     {
-      title: 'Skin Texture & Tone',
-      description: 'Comprehensive improvement in overall skin quality, texture and pigmentation irregularities',
-      treatmentArea: 'Face & Neck',
-      technology: 'Multi-Technology',
-      beforeImage: '/images/ba/ba-6-before.jpg',
-      afterImage: '/images/ba/ba-6-after.jpg',
+      title: 'Acne & Acne Scars',
+      description: 'Dramatic improvement in active acne and scarring using ClearSkin Pro non-ablative laser technology',
+      treatmentArea: 'Face',
+      technology: 'ClearSkin Pro',
+      beforeImage: '/images/ba/ba-2-before.jpg',
+      afterImage: '/images/ba/ba-2-after.jpg',
+      hasRealImage: true
+    },
+    {
+      title: 'Active Acne Treatment',
+      description: 'Effective treatment targeting acne-causing bacteria and inflammation for clearer, healthier skin',
+      treatmentArea: 'Face',
+      technology: 'Er:Glass 1540nm',
+      beforeImage: '/images/ba/ba-4-before.jpg',
+      afterImage: '/images/ba/ba-4-after.jpg',
+      hasRealImage: true
+    },
+    {
+      title: 'Tattoo Removal',
+      description: 'Q-Switch laser precisely targets tattoo pigments for safe and effective removal with minimal scarring',
+      treatmentArea: 'Body',
+      technology: 'Q-Switch Nd:YAG',
+      beforeImage: '/images/ba/ba-1-before.jpg',
+      afterImage: '/images/ba/ba-1-after.jpg',
       hasRealImage: true
     }
   ]

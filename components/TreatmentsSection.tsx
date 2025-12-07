@@ -140,35 +140,6 @@ export default function TreatmentsSection({ onBookingClick }: TreatmentsSectionP
           ))}
         </div>
 
-        {/* Treatment Categories */}
-        <div className="mt-12 sm:mt-16 bg-gradient-to-br from-primary-50 via-white to-primary-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-premium">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3">Featured Treatment Categories</h3>
-            <p className="text-neutral-600 max-w-2xl mx-auto">
-              Alma Harmony&apos;s versatility means we can tailor treatments specifically to your needs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { icon: '💪', name: 'Skin Tightening' },
-              { icon: '✨', name: 'Skin Resurfacing' },
-              { icon: '🎨', name: 'Pigmentation' },
-              { icon: '🌸', name: 'Acne & Scars' },
-              { icon: '❤️', name: 'Vascular' },
-              { icon: '💫', name: 'Hair Removal' }
-            ].map((category, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-4 text-center shadow-md hover:shadow-lg transition-shadow"
-              >
-                <span className="text-3xl mb-2 block">{category.icon}</span>
-                <span className="text-sm font-medium text-neutral-700">{category.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Mobile CTA */}
         <div className="mt-8 text-center sm:hidden">
           <p className="text-xs text-neutral-600 mb-3">Not sure which treatment is right for you?</p>
