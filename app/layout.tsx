@@ -15,7 +15,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://almaharmonybedford.co.uk'),
+  metadataBase: new URL('https://www.laserbedford.co.uk'),
   title: {
     default: 'Alma Harmony Bedford | Advanced Skin Resurfacing by Registered Nurse Claire Emmerson',
     template: '%s | Alma Harmony Bedford'
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Alma Harmony Bedford | Advanced Skin Resurfacing by Registered Nurse Claire Emmerson',
     description: 'Award-winning Alma Harmony skin resurfacing in Bedford. CQC registered, nurse-led clinic. Multi-technology platform for comprehensive skin treatments. Book your free consultation today.',
-    url: 'https://almaharmonybedford.co.uk',
+    url: 'https://www.laserbedford.co.uk',
     siteName: 'Alma Harmony Bedford - Clarity Cosmetics',
     images: [
       {
@@ -94,11 +94,11 @@ const structuredData = {
   '@graph': [
     {
       '@type': 'MedicalBusiness',
-      '@id': 'https://almaharmonybedford.co.uk/#medicalbusiness',
+      '@id': 'https://www.laserbedford.co.uk/#medicalbusiness',
       name: 'Clarity Cosmetics - Alma Harmony Bedford',
-      image: 'https://almaharmonybedford.co.uk/images/hero.jpg',
+      image: 'https://www.laserbedford.co.uk/images/hero.jpg',
       description: 'CQC registered nurse-led aesthetic clinic in Bedford specialising in Alma Harmony skin resurfacing treatments for skin rejuvenation, pigmentation, vascular lesions, and hair removal.',
-      url: 'https://almaharmonybedford.co.uk',
+      url: 'https://www.laserbedford.co.uk',
       telephone: '+447414154007',
       address: {
         '@type': 'PostalAddress',
@@ -127,18 +127,18 @@ const structuredData = {
         worstRating: '1',
       },
       founder: {
-        '@id': 'https://almaharmonybedford.co.uk/#person',
+        '@id': 'https://www.laserbedford.co.uk/#person',
       },
     },
     {
       '@type': 'Person',
-      '@id': 'https://almaharmonybedford.co.uk/#person',
+      '@id': 'https://www.laserbedford.co.uk/#person',
       name: 'Claire Emmerson',
       jobTitle: 'Registered Nurse & Aesthetic Practitioner',
-      image: 'https://almaharmonybedford.co.uk/images/hero.jpg',
+      image: 'https://www.laserbedford.co.uk/images/hero.jpg',
       description: 'Registered Nurse with over 10 years of experience, specialising in Alma Harmony skin resurfacing and aesthetic treatments. CQC registered and Independent Prescriber.',
       worksFor: {
-        '@id': 'https://almaharmonybedford.co.uk/#medicalbusiness',
+        '@id': 'https://www.laserbedford.co.uk/#medicalbusiness',
       },
       alumniOf: 'Nursing & Midwifery Council',
       hasCredential: [
@@ -165,7 +165,7 @@ const structuredData = {
       '@type': 'Service',
       serviceType: 'Alma Harmony Skin Resurfacing',
       provider: {
-        '@id': 'https://almaharmonybedford.co.uk/#medicalbusiness',
+        '@id': 'https://www.laserbedford.co.uk/#medicalbusiness',
       },
       areaServed: {
         '@type': 'City',
@@ -208,12 +208,12 @@ const structuredData = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://almaharmonybedford.co.uk/#website',
-      url: 'https://almaharmonybedford.co.uk',
+      '@id': 'https://www.laserbedford.co.uk/#website',
+      url: 'https://www.laserbedford.co.uk',
       name: 'Alma Harmony Bedford - Clarity Cosmetics',
       description: 'Award-winning Alma Harmony skin resurfacing in Bedford',
       publisher: {
-        '@id': 'https://almaharmonybedford.co.uk/#medicalbusiness',
+        '@id': 'https://www.laserbedford.co.uk/#medicalbusiness',
       },
       inLanguage: 'en-GB',
     },
@@ -224,7 +224,7 @@ const structuredData = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://almaharmonybedford.co.uk',
+          item: 'https://www.laserbedford.co.uk',
         },
       ],
     },
