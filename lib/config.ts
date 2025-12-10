@@ -9,18 +9,30 @@ export const siteConfig = {
   // Treatment pricing (null = show "From £POC")
   pricing: {
     pigmentation: {
-      session: 300,
-      package: 800,
+      session: 395,
+      package: 995,
       packageSessions: 3,
     },
     acneScars: {
-      session: 300,
-      package: 800,
+      session: 395,
+      package: 995,
       packageSessions: 3,
     },
-    skinTightening: null,
-    skinResurfacing: null,
-    vascularLesions: null,
+    skinTightening: {
+      session: 395,
+      package: 995,
+      packageSessions: 3,
+    },
+    skinResurfacing: {
+      session: 395,
+      package: 995,
+      packageSessions: 3,
+    },
+    vascularLesions: {
+      session: 395,
+      package: 995,
+      packageSessions: 3,
+    },
     hairRemoval: null,
     tattooRemoval: null,
   },
