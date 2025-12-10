@@ -1,10 +1,34 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+
 interface PremiumHeroProps {
   onBookingClick?: () => void
 }
 
+const headlines = [
+  { main: 'Tighter, Smoother Skin', sub: 'Zero Downtime. All Skin Types.' },
+  { main: 'Professional Skin Resurfacing', sub: 'Without The Recovery Time' },
+  { main: 'Firmer, Renewed Skin', sub: 'Walk In. Walk Out. No Downtime.' },
+  { main: 'Resurface. Tighten. Renew.', sub: 'Gentle Laser Treatments | No Downtime' },
+]
+
 export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [showVideo, setShowVideo] = useState(false)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true)
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % headlines.length)
+        setIsAnimating(false)
+      }, 300)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
       {/* Gradient Background */}
@@ -30,13 +54,17 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
             </div>
 
             {/* Main Heading */}
-            <h1 className="font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.15] sm:leading-[1.1]">
-              Transform Your Skin
-              <span className="block gradient-text mt-1">With Alma Harmony</span>
-            </h1>
+            <div className="min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px]">
+              <h1
+                className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] transition-all duration-300 ${isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}
+              >
+                {headlines[currentIndex].main}
+                <span className="block gradient-text mt-2">{headlines[currentIndex].sub}</span>
+              </h1>
+            </div>
 
             <p className="text-base sm:text-lg md:text-xl text-neutral-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Advanced multi-technology platform for skin resurfacing, rejuvenation, pigmentation, and more. Treated by Claire Emmerson, RN | Bedford
+              Award-winning laser technology for skin tightening, resurfacing and rejuvenation. Nurse-led by Claire Emmerson, RN | Bedford
             </p>
 
             {/* CTA Buttons */}
@@ -75,7 +103,7 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
               <div className="text-neutral-300">|</div>
               <div className="text-center">
                 <p className="text-2xl font-bold text-primary-600">EPDA</p>
-                <p className="text-xs text-neutral-600">Award Winner</p>
+                <p className="text-xs text-neutral-600">Award-Winning Tech</p>
               </div>
             </div>
           </div>
@@ -83,11 +111,25 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
           {/* Mobile Image Section */}
           <div className="relative mt-10 sm:mt-12 lg:hidden">
             <div className="relative mx-auto max-w-[320px]">
-              <img
-                src="/images/hero.jpg"
-                alt="Alma Harmony Skin Resurfacing Treatment"
-                className="rounded-2xl shadow-xl w-full"
-              />
+              <button
+                onClick={() => setShowVideo(true)}
+                className="relative w-full group"
+                aria-label="Play video"
+              >
+                <img
+                  src="/images/hero.jpg"
+                  alt="Alma Harmony Skin Resurfacing Treatment"
+                  className="rounded-2xl shadow-xl w-full"
+                />
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                    <svg className="w-6 h-6 text-primary-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+              </button>
               <div className="absolute -top-2 -right-2 bg-white rounded-lg shadow-lg p-2">
                 <p className="text-lg font-bold gradient-text">CQC</p>
               </div>
@@ -100,13 +142,25 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
               <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-100 rounded-3xl"></div>
 
               <div className="relative flex items-center justify-center h-full w-full">
-                <div className="relative w-full max-w-md">
+                <button
+                  onClick={() => setShowVideo(true)}
+                  className="relative w-full max-w-md group cursor-pointer"
+                  aria-label="Play video"
+                >
                   <img
                     src="/images/hero.jpg"
                     alt="Alma Harmony Skin Resurfacing Treatment"
                     className="rounded-2xl shadow-2xl w-full animate-float"
                   />
-                </div>
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-20 h-20 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                      <svg className="w-8 h-8 text-primary-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
               </div>
 
               {/* Info Card */}
@@ -140,6 +194,37 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
           </svg>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          onClick={() => setShowVideo(false)}
+        >
+          <div
+            className="relative w-full max-w-4xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-12 right-0 text-white hover:text-primary-400 transition-colors"
+              aria-label="Close video"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <div className="aspect-[9/16] max-h-[80vh] bg-black rounded-xl overflow-hidden">
+              <video
+                src="https://storage.googleapis.com/msgsndr/8PNaWjnYgGoS1sfgwICL/media/6939cd9ceac0a83f73d6829d.mp4"
+                controls
+                autoPlay
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

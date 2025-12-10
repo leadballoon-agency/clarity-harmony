@@ -57,10 +57,10 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
       hasRealImage: true
     },
     {
-      title: 'Tattoo Removal',
-      description: 'Q-Switch laser precisely targets tattoo pigments for safe and effective removal with minimal scarring',
-      treatmentArea: 'Body',
-      technology: 'Q-Switch Nd:YAG',
+      title: 'Skin Tightening & Rejuvenation',
+      description: 'Non-invasive skin tightening using Q-Switch and Er:Glass laser to stimulate deep collagen production for firmer skin',
+      treatmentArea: 'Face',
+      technology: 'ClearLift Pro',
       beforeImage: '/images/ba/ba-1-before.jpg',
       afterImage: '/images/ba/ba-1-after.jpg',
       hasRealImage: true
@@ -79,6 +79,36 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
           <p className="text-sm sm:text-base lg:text-lg text-neutral-600 mt-2 sm:mt-4 max-w-2xl mx-auto px-4 leading-relaxed">
             Drag the slider to reveal before and after results from Alma Harmony treatments
           </p>
+        </div>
+
+        {/* Hero Results Image - Full Width */}
+        <div className="mb-8 sm:mb-10 lg:mb-12">
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-premium-lg group">
+            <div className="aspect-[21/9] sm:aspect-[21/8] lg:aspect-[21/7] relative">
+              <img
+                src="/images/ba/laser-skin-rejeuvenation.jpeg"
+                alt="Alma Harmony Laser Skin Rejuvenation - Remarkable before and after results"
+                className="w-full h-full object-cover"
+              />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              {/* Content Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
+                <div className="max-w-3xl">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="bg-primary-500 text-white text-xs sm:text-sm font-medium px-3 py-1 rounded-full">Featured Result</span>
+                    <span className="bg-white/20 backdrop-blur text-white text-xs sm:text-sm font-medium px-3 py-1 rounded-full">Laser Skin Rejuvenation</span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
+                    Real Results, Real Transformation
+                  </h3>
+                  <p className="text-white/90 text-sm sm:text-base max-w-2xl">
+                    Witness the remarkable improvement in skin texture, tone and overall radiance achieved with Alma Harmony treatments at Clarity Cosmetics Bedford.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Results Grid */}

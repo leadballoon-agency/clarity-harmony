@@ -2,14 +2,18 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Script from 'next/script'
+import { siteConfig } from '@/lib/config'
 
 interface BookingModalProps {
   isOpen: boolean
   onClose: () => void
 }
 
+type ConsultationType = 'in-person' | 'video'
+
 export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [scriptLoaded, setScriptLoaded] = useState(false)
+  const [consultationType, setConsultationType] = useState<ConsultationType>('in-person')
   const iframeKey = useRef(0)
 
   useEffect(() => {
@@ -59,6 +63,41 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
         {/* Content */}
         <div className="p-4 sm:p-6">
+          {/* Consultation Type Selector - Only show if video consultations enabled */}
+          {siteConfig.videoConsultationsEnabled && (
+            <div className="mb-4">
+              <p className="text-sm font-medium text-neutral-700 mb-2">Choose consultation type:</p>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setConsultationType('in-person')}
+                  className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 transition-all ${
+                    consultationType === 'in-person'
+                      ? 'border-primary-500 bg-primary-50 text-primary-700'
+                      : 'border-neutral-200 bg-white text-neutral-600 hover:border-neutral-300'
+                  }`}
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                  <span className="font-medium">In-Person</span>
+                </button>
+                <button
+                  onClick={() => setConsultationType('video')}
+                  className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 transition-all ${
+                    consultationType === 'video'
+                      ? 'border-primary-500 bg-primary-50 text-primary-700'
+                      : 'border-neutral-200 bg-white text-neutral-600 hover:border-neutral-300'
+                  }`}
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  <span className="font-medium">Video Call</span>
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* Consultation Info */}
           <div className="bg-primary-50 rounded-xl p-4 mb-4">
             <div className="flex items-start gap-3">
@@ -68,9 +107,15 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 </svg>
               </div>
               <div>
-                <h3 className="font-semibold text-neutral-800 mb-1">Consultation Fee: £25</h3>
+                <h3 className="font-semibold text-neutral-800 mb-1">
+                  {consultationType === 'video' ? 'Video Consultation' : 'In-Person Consultation'}: £{siteConfig.consultationFee}
+                </h3>
                 <p className="text-sm text-neutral-600">
-                  Fully redeemable against any Alma Harmony treatment. Includes full skin assessment and personalized treatment plan.
+                  {consultationType === 'video'
+                    ? 'Connect from the comfort of your home. Discuss your concerns and receive expert advice via video call.'
+                    : 'Visit our Bedford clinic for a full skin assessment and personalized treatment plan.'
+                  }
+                  {' '}Fully redeemable against any Alma Harmony treatment.
                 </p>
               </div>
             </div>

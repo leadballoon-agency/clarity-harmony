@@ -1,73 +1,63 @@
+'use client'
+
+import { useState } from 'react'
+import { siteConfig } from '@/lib/config'
+
 interface TreatmentsSectionProps {
   onBookingClick?: () => void
 }
 
+interface TreatmentCategory {
+  id: string
+  name: string
+  icon: string
+  concerns: string[]
+}
+
 export default function TreatmentsSection({ onBookingClick }: TreatmentsSectionProps) {
-  const treatments = [
-    {
-      icon: '💪',
-      title: 'Skin Tightening & Rejuvenation',
-      description: 'Non-invasive skin tightening and collagen stimulation for firmer, younger-looking skin',
-      features: ['Skin laxity', 'Collagen stimulation', 'Face & body contouring', 'All skin types'],
-      price: 'From £POC',
-      gradient: 'from-primary-500 to-primary-700',
-      popular: true
-    },
-    {
-      icon: '✨',
-      title: 'Skin Resurfacing',
-      description: 'Transform your skin texture and tone with advanced ablative and non-ablative treatments',
-      features: ['Fine lines & wrinkles', 'Texture improvement', 'Skin rejuvenation', 'All skin types'],
-      price: 'From £POC',
-      gradient: 'from-primary-400 to-primary-600',
-      popular: false
-    },
-    {
-      icon: '🎯',
-      title: 'Pigmentation Treatment',
-      description: 'Target unwanted pigmentation, sun damage, and achieve an even skin tone',
-      features: ['Age spots', 'Sun damage', 'Melasma', 'Freckles'],
-      price: 'From £POC',
-      gradient: 'from-primary-500 to-primary-600',
-      popular: false
-    },
-    {
-      icon: '🌟',
-      title: 'Acne & Acne Scars',
-      description: 'Combat active acne and reduce scarring with targeted laser therapy',
-      features: ['Active acne', 'Acne scarring', 'Skin texture', 'Oil control'],
-      price: 'From £POC',
-      gradient: 'from-primary-400 to-primary-600',
-      popular: false
-    },
-    {
-      icon: '💫',
-      title: 'Vascular Lesions',
-      description: 'Effectively treat spider veins, rosacea, and other vascular concerns',
-      features: ['Spider veins', 'Rosacea', 'Broken capillaries', 'Facial redness'],
-      price: 'From £POC',
-      gradient: 'from-primary-500 to-primary-600',
-      popular: false
-    },
-    {
-      icon: '💎',
-      title: 'Hair Removal',
-      description: 'Safe and effective permanent hair reduction for all skin types',
-      features: ['Face & body', 'All skin types I-VI', 'SHR technology', 'Large areas'],
-      price: 'From £POC',
-      gradient: 'from-primary-400 to-primary-600',
-      popular: false
-    },
-    {
-      icon: '🔬',
-      title: 'Tattoo Removal',
-      description: 'Advanced Q-Switch technology for safe and effective tattoo removal',
-      features: ['Multi-colour tattoos', 'Professional & amateur', 'Minimal scarring', 'Gradual fading'],
-      price: 'From £POC',
-      gradient: 'from-primary-400 to-primary-500',
-      popular: false
-    }
-  ]
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+
+  // Comprehensive treatment card combining all services
+  const comprehensiveTreatment = {
+    icon: '✨',
+    title: 'Alma Harmony Skin Treatments',
+    subtitle: 'Comprehensive Skin Resurfacing & Rejuvenation',
+    description: 'Award-winning multi-technology platform treating a wide range of skin concerns. From tightening and resurfacing to pigmentation and scarring - all performed by Claire Emmerson, RN.',
+    categories: [
+      {
+        id: 'tightening',
+        name: 'Skin Tightening & Rejuvenation',
+        icon: '💪',
+        concerns: ['Skin laxity', 'Collagen stimulation', 'Face & body contouring']
+      },
+      {
+        id: 'resurfacing',
+        name: 'Skin Resurfacing',
+        icon: '✨',
+        concerns: ['Fine lines & wrinkles', 'Texture improvement', 'Skin rejuvenation']
+      },
+      {
+        id: 'pigmentation',
+        name: 'Pigmentation & Sun Damage',
+        icon: '🎯',
+        concerns: ['Age spots', 'Sun damage', 'Melasma', 'Freckles']
+      },
+      {
+        id: 'acne',
+        name: 'Acne & Scarring',
+        icon: '🌟',
+        concerns: ['Active acne', 'Acne scars', 'Skin texture']
+      },
+      {
+        id: 'vascular',
+        name: 'Vascular Concerns',
+        icon: '💫',
+        concerns: ['Spider veins', 'Rosacea', 'Broken capillaries', 'Facial redness']
+      }
+    ] as TreatmentCategory[],
+    pricing: siteConfig.pricing.pigmentation, // Using the standard pricing
+    gradient: 'from-primary-500 to-primary-700'
+  }
 
   return (
     <section id="treatments" className="py-16 sm:py-20 md:py-28 bg-white">
@@ -83,61 +73,115 @@ export default function TreatmentsSection({ onBookingClick }: TreatmentsSectionP
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {treatments.map((treatment, index) => (
-            <div
-              key={index}
-              className={`group relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 lg:p-8 transition-all duration-500 flex flex-col h-full ${
-                treatment.popular ? 'shadow-premium-lg sm:scale-105' : 'shadow-premium hover:shadow-premium-lg'
-              } sm:hover:scale-105`}
-            >
-              {treatment.popular && (
-                <div className="absolute -top-2 sm:-top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium">
-                  Most Popular
+        {/* Single Comprehensive Treatment Card */}
+        <div className="max-w-4xl mx-auto">
+          <div className="group relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-premium-lg">
+            <div className={`absolute inset-0 bg-gradient-to-br ${comprehensiveTreatment.gradient} opacity-5 rounded-2xl sm:rounded-3xl`}></div>
+
+            <div className="relative">
+              {/* Header */}
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center px-4 py-2 bg-primary-100 rounded-full mb-4">
+                  <span className="text-2xl mr-2">{comprehensiveTreatment.icon}</span>
+                  <span className="text-primary-700 font-medium text-sm">All Skin Types I-VI</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{comprehensiveTreatment.title}</h3>
+                <p className="text-primary-600 font-medium mb-4">{comprehensiveTreatment.subtitle}</p>
+                <p className="text-neutral-600 max-w-2xl mx-auto">{comprehensiveTreatment.description}</p>
+              </div>
+
+              {/* Treatment Categories Selection */}
+              <div className="mb-6">
+                <p className="text-sm font-medium text-neutral-700 mb-3 text-center">Select your primary concern:</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {comprehensiveTreatment.categories.map((category) => (
+                    <button
+                      key={category.id}
+                      onClick={() => setSelectedCategory(selectedCategory === category.id ? null : category.id)}
+                      className={`relative text-left rounded-xl p-4 border-2 transition-all duration-200 ${
+                        selectedCategory === category.id
+                          ? 'border-primary-500 bg-primary-50 shadow-md'
+                          : 'border-neutral-200 bg-white hover:border-primary-300 hover:bg-primary-50/50'
+                      }`}
+                    >
+                      {/* Radio indicator */}
+                      <div className={`absolute top-3 right-3 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all ${
+                        selectedCategory === category.id
+                          ? 'border-primary-500 bg-primary-500'
+                          : 'border-neutral-300'
+                      }`}>
+                        {selectedCategory === category.id && (
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        )}
+                      </div>
+
+                      <div className="flex items-center gap-2 mb-2 pr-6">
+                        <span className="text-xl">{category.icon}</span>
+                        <h4 className="font-semibold text-neutral-800 text-sm">{category.name}</h4>
+                      </div>
+                      <ul className="space-y-1">
+                        {category.concerns.map((concern, cidx) => (
+                          <li key={cidx} className="flex items-center text-xs text-neutral-600">
+                            <svg className="w-3 h-3 text-primary-500 mr-1.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            {concern}
+                          </li>
+                        ))}
+                      </ul>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Selected Treatment Info */}
+              {selectedCategory && (
+                <div className="bg-primary-50 border border-primary-200 rounded-xl p-4 mb-6">
+                  <div className="flex items-center gap-2 text-primary-700">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="font-medium">
+                      Selected: {comprehensiveTreatment.categories.find(c => c.id === selectedCategory)?.name}
+                    </span>
+                  </div>
                 </div>
               )}
 
-              <div className={`absolute inset-0 bg-gradient-to-br ${treatment.gradient} opacity-5 rounded-2xl sm:rounded-3xl transition-opacity group-hover:opacity-10`}></div>
-
-              <div className="relative flex flex-col h-full">
-                <div className="mb-3 sm:mb-4 lg:mb-6">
-                  <div className={`text-3xl sm:text-4xl lg:text-5xl p-2.5 sm:p-3 lg:p-4 bg-gradient-to-br ${treatment.gradient} rounded-xl sm:rounded-2xl bg-opacity-10 inline-block`}>
-                    {treatment.icon}
-                  </div>
-                </div>
-
-                <div className="mb-3 sm:mb-4 lg:mb-6">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-1.5 sm:mb-2">{treatment.title}</h3>
-                  <p className="text-sm sm:text-base lg:text-lg text-neutral-600">{treatment.description}</p>
-                </div>
-
-                <ul className="space-y-2 sm:space-y-2.5 mb-5 sm:mb-7 flex-grow">
-                  {treatment.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start sm:items-center text-sm sm:text-base text-neutral-700">
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary-500 mr-1.5 sm:mr-2 flex-shrink-0 mt-0.5 sm:mt-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="pt-4 sm:pt-5 border-t border-neutral-100 mt-auto">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-xl sm:text-2xl font-bold gradient-text">{treatment.price}</p>
+              {/* Pricing & CTA */}
+              <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl p-6 sm:p-8 text-white">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+                  <div className="text-center sm:text-left">
+                    <p className="text-white/80 text-sm mb-1">Treatment Pricing</p>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-3xl sm:text-4xl font-bold">£{comprehensiveTreatment.pricing?.session}</span>
+                      <span className="text-white/80">per session</span>
                     </div>
+                    <p className="text-white/90 mt-1">
+                      or <span className="font-semibold">£{comprehensiveTreatment.pricing?.package} for {comprehensiveTreatment.pricing?.packageSessions}</span>
+                      <span className="ml-2 bg-white/20 px-2 py-0.5 rounded text-xs">Save £{(comprehensiveTreatment.pricing?.session ?? 0) * (comprehensiveTreatment.pricing?.packageSessions ?? 0) - (comprehensiveTreatment.pricing?.package ?? 0)}</span>
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center sm:items-end gap-2">
                     <button
                       onClick={onBookingClick}
-                      className={`px-5 sm:px-6 lg:px-7 py-3.5 sm:py-4 rounded-full bg-gradient-to-r ${treatment.gradient} text-white font-medium hover:shadow-lg transition-all duration-300 sm:hover:scale-105 text-sm sm:text-base min-h-[48px]`}
+                      className={`inline-flex items-center px-8 py-4 rounded-full font-semibold transition-all duration-300 min-h-[48px] ${
+                        selectedCategory
+                          ? 'bg-white text-primary-600 hover:shadow-xl hover:scale-105'
+                          : 'bg-white/90 text-primary-600 hover:bg-white'
+                      }`}
                     >
-                      Enquire
+                      {selectedCategory ? 'Enquire Now' : 'Book Consultation'} - £25
+                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
                     </button>
+                    <span className="text-white/80 text-xs">Fully redeemable against your treatment</span>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Mobile CTA */}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { siteConfig } from '@/lib/config'
 
 interface AssessmentData {
   answers: Record<number, string>
@@ -8,11 +9,18 @@ interface AssessmentData {
   completedAt: string
 }
 
+interface Pricing {
+  session: number
+  package: number
+  packageSessions: number
+}
+
 interface Recommendation {
   treatment: string
   technology: string
   description: string
   benefits: string[]
+  pricing: Pricing | null
 }
 
 interface AssessmentToolProps {
@@ -33,9 +41,7 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
         { value: 'texture', label: 'Skin texture & tone', icon: '✨' },
         { value: 'pigmentation', label: 'Pigmentation & sun damage', icon: '☀️' },
         { value: 'acne', label: 'Acne & acne scars', icon: '🌟' },
-        { value: 'vascular', label: 'Redness & vascular issues', icon: '💫' },
-        { value: 'hair', label: 'Unwanted hair', icon: '💎' },
-        { value: 'tattoo', label: 'Tattoo removal', icon: '🔬' }
+        { value: 'vascular', label: 'Redness & vascular issues', icon: '💫' }
       ]
     },
     {
@@ -89,16 +95,8 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
         treatment: 'Skin Tightening & Rejuvenation',
         technology: 'ClearLift Pro + Non-Ablative Laser',
         description: 'Non-invasive skin tightening using Q-Switch and Er:Glass 1540nm laser to stimulate deep collagen production for firmer, more youthful skin with no downtime.',
-        benefits: ['Non-invasive', 'Collagen stimulation', 'All skin types I-VI']
-      }
-    }
-
-    if (concern === 'tattoo') {
-      return {
-        treatment: 'Q-Switch Laser Tattoo Removal',
-        technology: 'ClearLift Pro',
-        description: 'Advanced Q-Switch Nd:YAG laser precisely targets tattoo pigments for safe, effective removal with minimal scarring. Multiple sessions typically required.',
-        benefits: ['Multi-colour capable', 'Minimal scarring', 'Safe for all skin types']
+        benefits: ['Non-invasive', 'Collagen stimulation', 'All skin types I-VI'],
+        pricing: siteConfig.pricing.skinTightening
       }
     }
 
@@ -107,7 +105,8 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
         treatment: 'Acne & Acne Scar Treatment',
         technology: 'ClearSkin Pro',
         description: 'Award-winning Er:Glass 1540nm non-ablative laser targets acne-causing bacteria and stimulates collagen production to improve scarring and skin texture.',
-        benefits: ['Treats active acne', 'Reduces scarring', 'All skin types I-VI']
+        benefits: ['Treats active acne', 'Reduces scarring', 'All skin types I-VI'],
+        pricing: siteConfig.pricing.acneScars
       }
     }
 
@@ -117,14 +116,16 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
           treatment: 'Pigmentation Treatment',
           technology: 'Iris Dye-SR IPL',
           description: 'Specially designed narrow band IPL optimized for darker skin tones. Effectively targets melanin to reduce age spots, sun damage, and uneven skin tone with enhanced safety.',
-          benefits: ['Optimized for darker skin', 'Even skin tone', 'All skin types I-VI']
+          benefits: ['Optimized for darker skin', 'Even skin tone', 'All skin types I-VI'],
+          pricing: siteConfig.pricing.pigmentation
         }
       }
       return {
         treatment: 'Pigmentation & Sun Damage Treatment',
         technology: 'IPL + Q-Switch',
         description: 'Combined IPL and Q-Switch laser technology effectively reduces age spots, sun damage, freckles and melasma for a more even complexion.',
-        benefits: ['Reduces age spots', 'Evens skin tone', 'All skin types I-VI']
+        benefits: ['Reduces age spots', 'Evens skin tone', 'All skin types I-VI'],
+        pricing: siteConfig.pricing.pigmentation
       }
     }
 
@@ -133,16 +134,8 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
         treatment: 'Vascular Lesion Treatment',
         technology: 'VascuPen + ClearVas',
         description: 'Green diode and Nd:YAG lasers precisely target blood vessels to reduce spider veins, rosacea, broken capillaries and facial redness.',
-        benefits: ['Reduces redness', 'Treats spider veins', 'All skin types I-VI']
-      }
-    }
-
-    if (concern === 'hair') {
-      return {
-        treatment: 'Laser Hair Removal',
-        technology: 'Iris SHR IPL',
-        description: 'Super Hair Removal technology with large spot size for fast, comfortable permanent hair reduction. Safe and effective for all skin types I-VI.',
-        benefits: ['All skin types', 'Fast treatment', 'Permanent reduction']
+        benefits: ['Reduces redness', 'Treats spider veins', 'All skin types I-VI'],
+        pricing: siteConfig.pricing.vascularLesions
       }
     }
 
@@ -152,7 +145,8 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
         treatment: 'Bio-Boost Skin Rejuvenation',
         technology: 'ClearLift Pro + ClearSkin Pro',
         description: 'ELLE Award-winning Bio-Boost treatment combines Q-Switch and non-ablative laser for visible improvement in fine lines, texture and skin quality with no downtime.',
-        benefits: ['No downtime', 'Award-winning', 'All skin types I-VI']
+        benefits: ['No downtime', 'Award-winning', 'All skin types I-VI'],
+        pricing: siteConfig.pricing.skinResurfacing
       }
     }
 
@@ -160,7 +154,8 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
       treatment: 'Advanced Skin Resurfacing',
       technology: 'SupErb Ablative + ClearSkin Pro',
       description: 'Comprehensive skin resurfacing combining ablative Er:YAG and non-ablative laser for maximum improvement in texture, tone, fine lines and overall skin quality.',
-      benefits: ['Maximum results', 'Deep resurfacing', 'All skin types I-VI']
+      benefits: ['Maximum results', 'Deep resurfacing', 'All skin types I-VI'],
+      pricing: siteConfig.pricing.skinResurfacing
     }
   }
 
@@ -259,6 +254,24 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
                     </span>
                   ))}
                 </div>
+
+                {/* Pricing Display */}
+                {getRecommendation().pricing && (
+                  <div className="mt-4 pt-4 border-t border-primary-200">
+                    <p className="text-sm font-medium text-neutral-700 mb-2">Estimated Investment:</p>
+                    <div className="flex flex-wrap gap-3">
+                      <div className="bg-white rounded-lg px-4 py-2 shadow-sm">
+                        <p className="text-lg font-bold text-primary-600">£{getRecommendation().pricing!.session}</p>
+                        <p className="text-xs text-neutral-500">per session</p>
+                      </div>
+                      <div className="bg-white rounded-lg px-4 py-2 shadow-sm border-2 border-primary-500">
+                        <p className="text-lg font-bold text-primary-600">£{getRecommendation().pricing!.package}</p>
+                        <p className="text-xs text-neutral-500">for {getRecommendation().pricing!.packageSessions} sessions</p>
+                        <p className="text-xs text-green-600 font-medium">Save £{(getRecommendation().pricing!.session * getRecommendation().pricing!.packageSessions) - getRecommendation().pricing!.package}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <p className="text-sm text-neutral-500 mb-6">
