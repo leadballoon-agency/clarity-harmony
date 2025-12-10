@@ -1,28 +1,118 @@
 export default function TrustIconsTicker() {
-  const trustItems = [
-    { icon: '🏆', text: 'European Product Design Award Winner' },
-    { icon: '⭐', text: 'ELLE Best Laser for Fine Lines 2025' },
-    { icon: '🔬', text: '5 Laser Technologies' },
-    { icon: '✨', text: 'IPL Applicators' },
-    { icon: '👩‍⚕️', text: 'CQC Registered Clinic' },
-    { icon: '💉', text: 'Nurse-Led Treatments' },
-    { icon: '🌟', text: 'All Skin Types I-VI' },
-    { icon: '⚡', text: 'Flexible Downtime' },
-  ]
-
   return (
-    <section className="py-6 bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 overflow-hidden">
+    <section className="py-8 sm:py-12 bg-white border-y border-neutral-100 overflow-hidden">
+      <div className="mb-4 sm:mb-6 text-center">
+        <p className="text-xs sm:text-sm font-medium text-neutral-600 uppercase tracking-wide">
+          Trusted & Accredited
+        </p>
+      </div>
       <div className="relative">
-        <div className="flex animate-ticker whitespace-nowrap">
-          {[...trustItems, ...trustItems].map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center mx-8 text-white"
-            >
-              <span className="text-2xl mr-3">{item.icon}</span>
-              <span className="font-medium text-sm md:text-base">{item.text}</span>
-            </div>
-          ))}
+        {/* Gradient fade edges for smooth visual */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+        <div className="flex animate-ticker gap-4 sm:gap-8 md:gap-12">
+          {/* First set of logos - Mobile optimized spacing */}
+          <div className="flex items-center gap-6 sm:gap-10 md:gap-16 shrink-0">
+            <img
+              src="/images/Trust icons/cqc-logo.png"
+              alt="CQC Registered"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/BAMAN_Logobaman-logo-purple-background-social.png"
+              alt="BAMAN Member"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/cosmetic-insure.png"
+              alt="Cosmetic Insure"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/Derma-Medical-Retina-Logo.png"
+              alt="Derma Medical"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/medical-aesthetics-prescriber.jpeg"
+              alt="Medical Aesthetics Prescriber"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/Zo-Skin-Health-Logo-1024x369-1024x369-png.png"
+              alt="ZO Skin Health"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+          </div>
+
+          {/* Duplicate set for seamless loop */}
+          <div className="flex items-center gap-6 sm:gap-10 md:gap-16 shrink-0">
+            <img
+              src="/images/Trust icons/cqc-logo.png"
+              alt="CQC Registered"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/BAMAN_Logobaman-logo-purple-background-social.png"
+              alt="BAMAN Member"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/cosmetic-insure.png"
+              alt="Cosmetic Insure"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/Derma-Medical-Retina-Logo.png"
+              alt="Derma Medical"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/medical-aesthetics-prescriber.jpeg"
+              alt="Medical Aesthetics Prescriber"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/Zo-Skin-Health-Logo-1024x369-1024x369-png.png"
+              alt="ZO Skin Health"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+          </div>
+
+          {/* Third set for ultra-smooth looping on mobile */}
+          <div className="flex items-center gap-6 sm:gap-10 md:gap-16 shrink-0">
+            <img
+              src="/images/Trust icons/cqc-logo.png"
+              alt="CQC Registered"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/BAMAN_Logobaman-logo-purple-background-social.png"
+              alt="BAMAN Member"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/cosmetic-insure.png"
+              alt="Cosmetic Insure"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/Derma-Medical-Retina-Logo.png"
+              alt="Derma Medical"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/medical-aesthetics-prescriber.jpeg"
+              alt="Medical Aesthetics Prescriber"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src="/images/Trust icons/Zo-Skin-Health-Logo-1024x369-1024x369-png.png"
+              alt="ZO Skin Health"
+              className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
+          </div>
         </div>
       </div>
     </section>
