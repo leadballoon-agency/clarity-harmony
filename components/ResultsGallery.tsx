@@ -84,26 +84,33 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
         {/* Hero Results Image - Full Width */}
         <div className="mb-8 sm:mb-10 lg:mb-12">
           <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-premium-lg group">
-            <div className="aspect-[21/9] sm:aspect-[21/8] lg:aspect-[21/7] relative">
+            {/* Taller on mobile (4/3), wider landscape on desktop */}
+            <div className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] relative">
               <img
                 src="/images/ba/laser-skin-rejeuvenation.jpeg"
                 alt="Alma Harmony Laser Skin Rejuvenation - Remarkable before and after results"
                 className="w-full h-full object-cover"
               />
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              {/* Gradient Overlay - lighter on mobile */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent sm:from-black/70 sm:via-black/20"></div>
               {/* Content Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8 lg:p-10">
                 <div className="max-w-3xl">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="bg-primary-500 text-white text-xs sm:text-sm font-medium px-3 py-1 rounded-full">Featured Result</span>
-                    <span className="bg-white/20 backdrop-blur text-white text-xs sm:text-sm font-medium px-3 py-1 rounded-full">Laser Skin Rejuvenation</span>
+                  {/* Badges - stack on mobile */}
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="bg-primary-500 text-white text-xs font-medium px-2.5 py-1 rounded-full">Featured Result</span>
+                    <span className="hidden sm:inline-block bg-white/20 backdrop-blur text-white text-xs sm:text-sm font-medium px-3 py-1 rounded-full">Laser Skin Rejuvenation</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
+                  <h3 className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">
                     Real Results, Real Transformation
                   </h3>
-                  <p className="text-white/90 text-sm sm:text-base max-w-2xl">
+                  {/* Hide long description on mobile */}
+                  <p className="hidden sm:block text-white/90 text-sm sm:text-base max-w-2xl">
                     Witness the remarkable improvement in skin texture, tone and overall radiance achieved with Alma Harmony treatments at Clarity Cosmetics Bedford.
+                  </p>
+                  {/* Short description for mobile only */}
+                  <p className="sm:hidden text-white/90 text-xs">
+                    Alma Harmony skin rejuvenation results
                   </p>
                 </div>
               </div>
