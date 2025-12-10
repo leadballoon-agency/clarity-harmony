@@ -57,10 +57,10 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
       hasRealImage: true
     },
     {
-      title: 'Skin Tightening & Rejuvenation',
-      description: 'Non-invasive skin tightening using Q-Switch and Er:Glass laser to stimulate deep collagen production for firmer skin',
-      treatmentArea: 'Face',
-      technology: 'ClearLift Pro',
+      title: 'Tattoo Removal',
+      description: 'Q-Switch laser technology breaks down tattoo ink particles, allowing the body to naturally eliminate them over multiple sessions for significant fading',
+      treatmentArea: 'Body',
+      technology: 'Q-Switch',
       beforeImage: '/images/ba/ba-1-before.jpg',
       afterImage: '/images/ba/ba-1-after.jpg',
       hasRealImage: true
