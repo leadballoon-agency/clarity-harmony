@@ -22,7 +22,7 @@ export default function CTASection({ onBookingClick }: CTASectionProps) {
         </h2>
 
         <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Book your consultation with Claire Emmerson, RN to discover how Alma Harmony&apos;s award-winning technology can help you achieve your skin goals.
+          Book your professional skin analysis with Claire Emmerson, RN to discover how Alma Harmony&apos;s award-winning technology can help you achieve your skin goals.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -30,7 +30,7 @@ export default function CTASection({ onBookingClick }: CTASectionProps) {
             onClick={onBookingClick}
             className="inline-flex items-center bg-white text-primary-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[56px]"
           >
-            Book Consultation - £25
+            Book Skin Analysis - £25
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
@@ -48,7 +48,7 @@ export default function CTASection({ onBookingClick }: CTASectionProps) {
         </div>
 
         <p className="text-white/70 text-sm mt-6">
-          Consultation fee fully redeemable against your treatment
+          FREE when you proceed with treatment - fully redeemable
         </p>
 
         {/* Trust badges */}

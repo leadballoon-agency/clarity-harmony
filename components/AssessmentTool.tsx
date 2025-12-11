@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { siteConfig } from '@/lib/config'
 
 interface AssessmentData {
   answers: Record<number, string>
@@ -9,18 +8,11 @@ interface AssessmentData {
   completedAt: string
 }
 
-interface Pricing {
-  session: number
-  package: number
-  packageSessions: number
-}
-
 interface Recommendation {
   treatment: string
   technology: string
   description: string
   benefits: string[]
-  pricing: Pricing | null
 }
 
 interface AssessmentToolProps {
@@ -95,8 +87,7 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
         treatment: 'Skin Tightening & Rejuvenation',
         technology: 'ClearLift Pro + Non-Ablative Laser',
         description: 'Non-invasive skin tightening using Q-Switch and Er:Glass 1540nm laser to stimulate deep collagen production for firmer, more youthful skin with no downtime.',
-        benefits: ['Non-invasive', 'Collagen stimulation', 'All skin types I-VI'],
-        pricing: siteConfig.pricing.skinTightening
+        benefits: ['Non-invasive', 'Collagen stimulation', 'All skin types I-VI']
       }
     }
 
@@ -105,8 +96,7 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
         treatment: 'Acne & Acne Scar Treatment',
         technology: 'ClearSkin Pro',
         description: 'Award-winning Er:Glass 1540nm non-ablative laser targets acne-causing bacteria and stimulates collagen production to improve scarring and skin texture.',
-        benefits: ['Treats active acne', 'Reduces scarring', 'All skin types I-VI'],
-        pricing: siteConfig.pricing.acneScars
+        benefits: ['Treats active acne', 'Reduces scarring', 'All skin types I-VI']
       }
     }
 
@@ -116,16 +106,14 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
           treatment: 'Pigmentation Treatment',
           technology: 'Iris Dye-SR IPL',
           description: 'Specially designed narrow band IPL optimized for darker skin tones. Effectively targets melanin to reduce age spots, sun damage, and uneven skin tone with enhanced safety.',
-          benefits: ['Optimized for darker skin', 'Even skin tone', 'All skin types I-VI'],
-          pricing: siteConfig.pricing.pigmentation
+          benefits: ['Optimized for darker skin', 'Even skin tone', 'All skin types I-VI']
         }
       }
       return {
         treatment: 'Pigmentation & Sun Damage Treatment',
         technology: 'IPL + Q-Switch',
         description: 'Combined IPL and Q-Switch laser technology effectively reduces age spots, sun damage, freckles and melasma for a more even complexion.',
-        benefits: ['Reduces age spots', 'Evens skin tone', 'All skin types I-VI'],
-        pricing: siteConfig.pricing.pigmentation
+        benefits: ['Reduces age spots', 'Evens skin tone', 'All skin types I-VI']
       }
     }
 
@@ -134,8 +122,7 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
         treatment: 'Vascular Lesion Treatment',
         technology: 'VascuPen + ClearVas',
         description: 'Green diode and Nd:YAG lasers precisely target blood vessels to reduce spider veins, rosacea, broken capillaries and facial redness.',
-        benefits: ['Reduces redness', 'Treats spider veins', 'All skin types I-VI'],
-        pricing: siteConfig.pricing.vascularLesions
+        benefits: ['Reduces redness', 'Treats spider veins', 'All skin types I-VI']
       }
     }
 
@@ -145,8 +132,7 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
         treatment: 'Bio-Boost Skin Rejuvenation',
         technology: 'ClearLift Pro + ClearSkin Pro',
         description: 'ELLE Award-winning Bio-Boost treatment combines Q-Switch and non-ablative laser for visible improvement in fine lines, texture and skin quality with no downtime.',
-        benefits: ['No downtime', 'Award-winning', 'All skin types I-VI'],
-        pricing: siteConfig.pricing.skinResurfacing
+        benefits: ['No downtime', 'Award-winning', 'All skin types I-VI']
       }
     }
 
@@ -154,8 +140,7 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
       treatment: 'Advanced Skin Resurfacing',
       technology: 'SupErb Ablative + ClearSkin Pro',
       description: 'Comprehensive skin resurfacing combining ablative Er:YAG and non-ablative laser for maximum improvement in texture, tone, fine lines and overall skin quality.',
-      benefits: ['Maximum results', 'Deep resurfacing', 'All skin types I-VI'],
-      pricing: siteConfig.pricing.skinResurfacing
+      benefits: ['Maximum results', 'Deep resurfacing', 'All skin types I-VI']
     }
   }
 
@@ -254,28 +239,10 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
                     </span>
                   ))}
                 </div>
-
-                {/* Pricing Display */}
-                {getRecommendation().pricing && (
-                  <div className="mt-4 pt-4 border-t border-primary-200">
-                    <p className="text-sm font-medium text-neutral-700 mb-2">Estimated Investment:</p>
-                    <div className="flex flex-wrap gap-3">
-                      <div className="bg-white rounded-lg px-4 py-2 shadow-sm">
-                        <p className="text-lg font-bold text-primary-600">£{getRecommendation().pricing!.session}</p>
-                        <p className="text-xs text-neutral-500">per session</p>
-                      </div>
-                      <div className="bg-white rounded-lg px-4 py-2 shadow-sm border-2 border-primary-500">
-                        <p className="text-lg font-bold text-primary-600">£{getRecommendation().pricing!.package}</p>
-                        <p className="text-xs text-neutral-500">for {getRecommendation().pricing!.packageSessions} sessions</p>
-                        <p className="text-xs text-green-600 font-medium">Save £{(getRecommendation().pricing!.session * getRecommendation().pricing!.packageSessions) - getRecommendation().pricing!.package}</p>
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
 
               <p className="text-sm text-neutral-500 mb-6">
-                Book a consultation with Claire Emmerson, RN to discuss your personalized treatment plan
+                Book a skin analysis with Claire Emmerson, RN to discuss your personalized treatment plan
               </p>
 
               <div className="flex flex-col gap-3 sm:gap-4">
@@ -283,12 +250,12 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
                   onClick={onBookingClick}
                   className="w-full inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3.5 sm:py-4 rounded-full font-medium hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[48px]"
                 >
-                  Book Consultation - £25
+                  Book Skin Analysis - £25
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </button>
-                <p className="text-xs text-neutral-500">Fully redeemable against your treatment</p>
+                <p className="text-xs text-neutral-500">FREE when you proceed with treatment</p>
                 <button
                   onClick={() => {setStep(1); setAnswers({})}}
                   className="w-full inline-flex items-center justify-center text-primary-600 text-sm font-medium hover:text-primary-700 transition-all duration-300"

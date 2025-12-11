@@ -54,10 +54,10 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         {/* Header */}
         <div className="bg-gradient-to-r from-primary-500 to-primary-600 p-6 sm:p-8 text-white rounded-t-2xl sm:rounded-t-3xl">
           <h2 className="font-display text-2xl sm:text-3xl font-bold mb-2">
-            Book Your Consultation
+            Book Your Skin Analysis
           </h2>
           <p className="text-white/90 text-sm sm:text-base">
-            Alma Harmony Skin Resurfacing with Claire Emmerson, RN
+            Professional skin assessment with Claire Emmerson, RN
           </p>
         </div>
 
@@ -108,14 +108,14 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
               <div>
                 <h3 className="font-semibold text-neutral-800 mb-1">
-                  {consultationType === 'video' ? 'Video Consultation' : 'In-Person Consultation'}: £{siteConfig.consultationFee}
+                  {consultationType === 'video' ? 'Video Skin Analysis' : 'In-Person Skin Analysis'}: £{siteConfig.consultationFee}
                 </h3>
                 <p className="text-sm text-neutral-600">
                   {consultationType === 'video'
                     ? 'Connect from the comfort of your home. Discuss your concerns and receive expert advice via video call.'
-                    : 'Visit our Bedford clinic for a full skin assessment and personalized treatment plan.'
+                    : 'Visit our Bedford clinic for a professional skin assessment and personalized treatment plan.'
                   }
-                  {' '}Fully redeemable against any Alma Harmony treatment.
+                  {' '}<span className="font-medium text-primary-700">FREE when you proceed with treatment</span> - fully redeemable.
                 </p>
               </div>
             </div>

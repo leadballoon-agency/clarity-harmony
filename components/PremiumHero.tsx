@@ -74,12 +74,12 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
                   onClick={onBookingClick}
                   className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-7 py-3.5 rounded-full font-medium text-base hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto min-h-[48px]"
                 >
-                  Book Consultation - £25
+                  Book Skin Analysis - £25
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </button>
-                <span className="text-xs text-neutral-500 mt-2.5 sm:mt-2">Fully redeemable against your treatment</span>
+                <span className="text-xs text-neutral-500 mt-2.5 sm:mt-2">FREE when you proceed with treatment</span>
               </div>
               <a
                 href="#treatments"
