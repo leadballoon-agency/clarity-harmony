@@ -263,12 +263,6 @@ const structuredData = {
               name: 'Pigmentation & Sun Damage Treatment',
               description: 'Combined IPL and Q-Switch laser technology to reduce age spots, sun damage, freckles and melasma for a more even complexion.',
             },
-            priceSpecification: {
-              '@type': 'PriceSpecification',
-              price: '300',
-              priceCurrency: 'GBP',
-              unitText: 'per session',
-            },
           },
           {
             '@type': 'Offer',
@@ -277,11 +271,13 @@ const structuredData = {
               name: 'Acne & Acne Scar Treatment',
               description: 'Award-winning Er:Glass 1540nm non-ablative laser targets acne-causing bacteria and stimulates collagen production to improve scarring.',
             },
-            priceSpecification: {
-              '@type': 'PriceSpecification',
-              price: '300',
-              priceCurrency: 'GBP',
-              unitText: 'per session',
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Bio-Boost Skin Rejuvenation',
+              description: 'ELLE Award-winning multi-laser treatment combining up to 4 technologies for visible improvement in fine lines, texture, and skin quality with zero downtime.',
             },
           },
           {
@@ -394,7 +390,7 @@ const structuredData = {
           name: 'How much does treatment cost?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Treatments start from £300 per session, with package pricing available at £800 for 3 sessions (saving £100). A consultation costs £25 which is fully redeemable against any treatment you book. The consultation includes a full skin assessment and personalised treatment plan.',
+            text: 'Treatment pricing depends on the area being treated, the intensity required, and which laser technologies are combined for your specific concerns. A skin analysis costs £25 and is FREE when you proceed with treatment. During your skin analysis, Claire will assess your concerns and provide a personalised treatment plan with pricing.',
           },
         },
         {
@@ -425,35 +421,12 @@ const structuredData = {
         name: 'Alma Lasers',
       },
       offers: {
-        '@type': 'AggregateOffer',
+        '@type': 'Offer',
         priceCurrency: 'GBP',
-        lowPrice: '25',
-        highPrice: '800',
+        price: '25',
         availability: 'https://schema.org/InStock',
-        offerCount: 5,
-        offers: [
-          {
-            '@type': 'Offer',
-            name: 'Consultation',
-            price: '25',
-            priceCurrency: 'GBP',
-            description: 'Full skin assessment - fully redeemable against treatment',
-          },
-          {
-            '@type': 'Offer',
-            name: 'Single Session',
-            price: '300',
-            priceCurrency: 'GBP',
-            description: 'Per treatment session',
-          },
-          {
-            '@type': 'Offer',
-            name: 'Course of 3 Sessions',
-            price: '800',
-            priceCurrency: 'GBP',
-            description: 'Package of 3 treatment sessions - Save £100',
-          },
-        ],
+        name: 'Skin Analysis',
+        description: 'Professional skin assessment with Claire Emmerson, RN - FREE when you proceed with treatment',
       },
       aggregateRating: {
         '@type': 'AggregateRating',

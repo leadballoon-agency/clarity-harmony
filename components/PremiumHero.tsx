@@ -13,10 +13,13 @@ const headlines = [
   { main: 'Resurface. Tighten. Renew.', sub: 'Gentle Laser Treatments | No Downtime' },
 ]
 
+const SKIN_ANALYSIS_VIDEO = 'https://storage.googleapis.com/msgsndr/8PNaWjnYgGoS1sfgwICL/media/693b26b7ed957f58d50fee19.mp4'
+const CLAIRE_VIDEO = 'https://storage.googleapis.com/msgsndr/8PNaWjnYgGoS1sfgwICL/media/6939cd9ceac0a83f73d6829d.mp4'
+
 export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
-  const [showVideo, setShowVideo] = useState(false)
+  const [activeVideo, setActiveVideo] = useState<string | null>(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,13 +56,13 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
               <span className="text-primary-700 font-medium text-sm">Award-Winning Technology | Simply Intelligent</span>
             </div>
 
-            {/* Main Heading */}
-            <div className="min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px]">
+            {/* Main Heading - Fixed height container to prevent layout jumps */}
+            <div className="relative h-[130px] sm:h-[150px] md:h-[170px] lg:h-[180px]">
               <h1
-                className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] transition-all duration-300 ${isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}
+                className={`absolute inset-0 font-display text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-bold leading-[1.15] transition-all duration-300 ${isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}
               >
                 {headlines[currentIndex].main}
-                <span className="block gradient-text mt-2">{headlines[currentIndex].sub}</span>
+                <span className="block gradient-text mt-1 text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem]">{headlines[currentIndex].sub}</span>
               </h1>
             </div>
 
@@ -81,12 +84,15 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
                 </button>
                 <span className="text-xs text-neutral-500 mt-2.5 sm:mt-2">FREE when you proceed with treatment</span>
               </div>
-              <a
-                href="#treatments"
+              <button
+                onClick={() => setActiveVideo(SKIN_ANALYSIS_VIDEO)}
                 className="inline-flex items-center justify-center border-2 border-primary-500 text-primary-600 px-7 py-3.5 rounded-full font-medium text-base hover:bg-primary-50 transition-all duration-300 w-full sm:w-auto min-h-[48px]"
               >
-                View Treatments
-              </a>
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                Watch Video
+              </button>
             </div>
 
             {/* Trust Badges */}
@@ -112,7 +118,7 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
           <div className="relative mt-10 sm:mt-12 lg:hidden">
             <div className="relative mx-auto max-w-[320px]">
               <button
-                onClick={() => setShowVideo(true)}
+                onClick={() => setActiveVideo(CLAIRE_VIDEO)}
                 className="relative w-full group"
                 aria-label="Play video"
               >
@@ -143,7 +149,7 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
 
               <div className="relative flex items-center justify-center h-full w-full">
                 <button
-                  onClick={() => setShowVideo(true)}
+                  onClick={() => setActiveVideo(CLAIRE_VIDEO)}
                   className="relative w-full max-w-md group cursor-pointer"
                   aria-label="Play video"
                 >
@@ -196,17 +202,17 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
       </div>
 
       {/* Video Modal */}
-      {showVideo && (
+      {activeVideo && (
         <div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={() => setShowVideo(false)}
+          onClick={() => setActiveVideo(null)}
         >
           <div
             className="relative w-full max-w-4xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              onClick={() => setShowVideo(false)}
+              onClick={() => setActiveVideo(null)}
               className="absolute -top-12 right-0 text-white hover:text-primary-400 transition-colors"
               aria-label="Close video"
             >
@@ -216,7 +222,7 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
             </button>
             <div className="aspect-[9/16] max-h-[80vh] bg-black rounded-xl overflow-hidden">
               <video
-                src="https://storage.googleapis.com/msgsndr/8PNaWjnYgGoS1sfgwICL/media/6939cd9ceac0a83f73d6829d.mp4"
+                src={activeVideo}
                 controls
                 autoPlay
                 className="w-full h-full object-contain"
