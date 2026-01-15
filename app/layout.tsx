@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     'pigmentation treatment Bedford',
     'vascular lesion treatment Bedford',
     'hair removal Bedford',
-    'Clarity Cosmetics',
+    'Clarity Clinic',
     'Claire Emmerson',
     'nurse-led aesthetics Bedford',
     'CQC registered clinic Bedford',
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     shortcut: '/images/favicon.png'
   },
   authors: [{ name: 'Claire Emmerson, RN' }],
-  creator: 'Clarity Cosmetics',
-  publisher: 'Clarity Cosmetics',
+  creator: 'Clarity Clinic',
+  publisher: 'Clarity Clinic',
   formatDetection: {
     email: false,
     address: false,
@@ -58,13 +58,13 @@ export const metadata: Metadata = {
     title: 'Alma Harmony Bedford | Advanced Skin Resurfacing by Registered Nurse Claire Emmerson',
     description: 'Award-winning Alma Harmony skin resurfacing in Bedford. CQC registered, nurse-led clinic. Multi-technology platform for comprehensive skin treatments. Book your consultation today - £25 fully redeemable.',
     url: 'https://www.laserbedford.co.uk',
-    siteName: 'Alma Harmony Bedford - Clarity Cosmetics',
+    siteName: 'Alma Harmony Bedford - Clarity Clinic',
     images: [
       {
         url: '/images/ba/laser-skin-rejeuvenation.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Alma Harmony Laser Skin Rejuvenation Results - Before and After at Clarity Cosmetics Bedford',
+        alt: 'Alma Harmony Laser Skin Rejuvenation Results - Before and After at Clarity Clinic Bedford',
       },
     ],
     locale: 'en_GB',
@@ -95,9 +95,9 @@ const structuredData = {
     {
       '@type': 'MedicalBusiness',
       '@id': 'https://www.laserbedford.co.uk/#medicalbusiness',
-      name: 'Clarity Cosmetics - Alma Harmony Bedford',
+      name: 'Clarity Clinic - Alma Harmony Bedford',
       image: 'https://www.laserbedford.co.uk/images/ba/laser-skin-rejeuvenation.jpeg',
-      logo: 'https://www.laserbedford.co.uk/images/clarity-Logo.png',
+      logo: 'https://www.laserbedford.co.uk/clarity-clinic-logo.png',
       description: 'CQC registered nurse-led aesthetic clinic in Bedford specialising in Alma Harmony skin resurfacing treatments. Award-winning technology for skin tightening, rejuvenation, pigmentation, acne scarring and vascular concerns. All treatments performed by Claire Emmerson, RN.',
       url: 'https://www.laserbedford.co.uk',
       telephone: '+447414154007',
@@ -308,7 +308,7 @@ const structuredData = {
       '@type': 'WebSite',
       '@id': 'https://www.laserbedford.co.uk/#website',
       url: 'https://www.laserbedford.co.uk',
-      name: 'Alma Harmony Bedford - Clarity Cosmetics',
+      name: 'Alma Harmony Bedford - Clarity Clinic',
       description: 'Award-winning Alma Harmony skin resurfacing in Bedford. CQC registered, nurse-led clinic.',
       publisher: {
         '@id': 'https://www.laserbedford.co.uk/#medicalbusiness',
@@ -443,7 +443,7 @@ const structuredData = {
     {
       '@type': 'LocalBusiness',
       '@id': 'https://www.laserbedford.co.uk/#localbusiness',
-      name: 'Clarity Cosmetics Bedford',
+      name: 'Clarity Clinic Bedford',
       image: 'https://www.laserbedford.co.uk/images/ba/laser-skin-rejeuvenation.jpeg',
       telephone: '+447414154007',
       address: {
