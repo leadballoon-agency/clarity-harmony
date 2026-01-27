@@ -15,32 +15,32 @@ export default function SkinResetHero({ onBookingClick }: SkinResetHeroProps) {
 
   return (
     <>
-      <section className="bg-gradient-to-b from-primary-50 via-white to-white pt-20 pb-8 sm:pt-24 sm:pb-12 lg:pt-28 lg:pb-16">
-        <div className="max-w-6xl mx-auto section-padding">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+      <section className="min-h-[100dvh] bg-gradient-to-b from-primary-50 via-white to-white flex items-center">
+        <div className="max-w-6xl mx-auto section-padding py-20 sm:py-24 lg:py-28 w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Copy - First on mobile and desktop */}
-            <div className="space-y-5 lg:space-y-8">
+            <div className="space-y-6 lg:space-y-8">
               {/* Eyebrow */}
-              <p className="text-primary-600 font-medium text-sm">
+              <p className="text-primary-600 font-medium text-sm uppercase tracking-wide">
                 For women ready to put themselves first
               </p>
 
               {/* Headline */}
-              <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+              <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                 You&apos;ve Taken Care of Everyone Else.
-                <span className="block gradient-text mt-1">Now It&apos;s Your Turn.</span>
+                <span className="block gradient-text mt-2">Now It&apos;s Your Turn.</span>
               </h1>
 
               {/* Subheadline */}
-              <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
+              <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-lg">
                 Erbium-YAG fractional laser for women in their 40s, 50s & 60s ready to reclaim their skin.
               </p>
 
               {/* CTA */}
-              <div className="pt-2">
+              <div className="pt-4">
                 <button
                   onClick={onBookingClick}
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium text-base hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-medium text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   Book Your Consultation
                 </button>
@@ -49,7 +49,7 @@ export default function SkinResetHero({ onBookingClick }: SkinResetHeroProps) {
 
             {/* Video - Below copy on mobile, right side on desktop */}
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl bg-neutral-900 aspect-square max-w-sm mx-auto lg:max-w-md">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-neutral-900 aspect-square max-w-md mx-auto lg:max-w-lg">
                 {/* Video */}
                 <video
                   ref={videoRef}

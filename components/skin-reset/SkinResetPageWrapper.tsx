@@ -8,6 +8,7 @@ import EmpathySection from '@/components/skin-reset/EmpathySection'
 import BenefitsGrid from '@/components/skin-reset/BenefitsGrid'
 import SkinResetResults from '@/components/skin-reset/SkinResetResults'
 import SkinResetAbout from '@/components/skin-reset/SkinResetAbout'
+import SkinResetReviews from '@/components/skin-reset/SkinResetReviews'
 import SkinResetFAQ from '@/components/skin-reset/SkinResetFAQ'
 import SkinResetCTA from '@/components/skin-reset/SkinResetCTA'
 import Footer from '@/components/Footer'
@@ -32,6 +33,7 @@ export default function SkinResetPageWrapper() {
         <BenefitsGrid />
         <SkinResetResults />
         <SkinResetAbout />
+        <SkinResetReviews />
         <SkinResetFAQ />
         <SkinResetCTA onBookingClick={handleBookingClick} />
       </main>
