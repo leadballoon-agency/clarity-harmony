@@ -1,8 +1,4 @@
-interface SkinResetAboutProps {
-  onBookingClick: () => void
-}
-
-export default function SkinResetAbout({ onBookingClick }: SkinResetAboutProps) {
+export default function SkinResetAbout() {
   return (
     <section className="py-10 sm:py-14 md:py-20 bg-white">
       <div className="max-w-5xl mx-auto section-padding">
@@ -34,12 +30,12 @@ export default function SkinResetAbout({ onBookingClick }: SkinResetAboutProps) 
 
             <div className="bg-primary-50 rounded-xl p-4 sm:p-5">
               <p className="text-base sm:text-lg text-neutral-700 italic">
-                "This is about more than skin. It's about how you feel when you look in the mirror."
+                &quot;This is about more than skin. It&apos;s about how you feel when you look in the mirror.&quot;
               </p>
             </div>
 
             <p className="text-sm sm:text-base text-neutral-600">
-              Years of experience in women's health and aesthetic medicine. My goal isn't to change who you are - it's to help you feel like yourself again.
+              Years of experience in women&apos;s health and aesthetic medicine. My goal isn&apos;t to change who you are - it&apos;s to help you feel like yourself again.
             </p>
           </div>
         </div>

@@ -8,7 +8,7 @@ export default function SkinResetCTA({ onBookingClick }: SkinResetCTAProps) {
       <div className="max-w-2xl mx-auto section-padding text-center text-white">
         <h2 className="font-display text-lg sm:text-xl md:text-2xl font-bold leading-tight">
           Looking in the mirror and loving what you see
-          <span className="block mt-1 text-primary-100">isn't vanity. It's self-respect.</span>
+          <span className="block mt-1 text-primary-100">isn&apos;t vanity. It&apos;s self-respect.</span>
         </h2>
 
         <div className="mt-6 sm:mt-8">

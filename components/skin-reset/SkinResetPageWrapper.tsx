@@ -31,8 +31,8 @@ export default function SkinResetPageWrapper() {
         <EmpathySection />
         <BenefitsGrid />
         <SkinResetResults />
-        <SkinResetAbout onBookingClick={handleBookingClick} />
-        <SkinResetFAQ onBookingClick={handleBookingClick} />
+        <SkinResetAbout />
+        <SkinResetFAQ />
         <SkinResetCTA onBookingClick={handleBookingClick} />
       </main>
       <Footer />

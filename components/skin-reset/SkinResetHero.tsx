@@ -27,8 +27,8 @@ export default function SkinResetHero({ onBookingClick }: SkinResetHeroProps) {
 
               {/* Headline */}
               <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
-                You've Taken Care of Everyone Else.
-                <span className="block gradient-text mt-1">Now It's Your Turn.</span>
+                You&apos;ve Taken Care of Everyone Else.
+                <span className="block gradient-text mt-1">Now It&apos;s Your Turn.</span>
               </h1>
 
               {/* Subheadline */}

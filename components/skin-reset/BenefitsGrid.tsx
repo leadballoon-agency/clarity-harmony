@@ -40,7 +40,7 @@ export default function BenefitsGrid() {
       <div className="max-w-4xl mx-auto section-padding">
         <div className="text-center mb-6 sm:mb-10">
           <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold">
-            This Isn't a Quick Fix.
+            This Isn&apos;t a Quick Fix.
             <span className="block gradient-text mt-1">This Is a Skin Reset.</span>
           </h2>
         </div>
@@ -61,7 +61,7 @@ export default function BenefitsGrid() {
 
         <div className="text-center mt-6 sm:mt-10">
           <p className="text-base sm:text-lg font-medium text-neutral-600">
-            Skin that looks healthy - not 'done'.
+            Skin that looks healthy - not &apos;done&apos;.
           </p>
         </div>
       </div>

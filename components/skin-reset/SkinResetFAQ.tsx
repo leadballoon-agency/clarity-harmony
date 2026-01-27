@@ -21,11 +21,7 @@ const faqs = [
   }
 ]
 
-interface SkinResetFAQProps {
-  onBookingClick: () => void
-}
-
-export default function SkinResetFAQ({ onBookingClick }: SkinResetFAQProps) {
+export default function SkinResetFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
