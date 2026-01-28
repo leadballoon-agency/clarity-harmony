@@ -3,12 +3,12 @@ import Script from 'next/script'
 import SkinResetPageWrapper from '@/components/skin-reset/SkinResetPageWrapper'
 
 export const metadata: Metadata = {
-  title: 'Skin Reset | Erbium-YAG Laser for Women 40s, 50s & 60s | Clarity Clinic Bedford',
-  description: 'Fractional ablative laser designed for women ready to reclaim their skin. Smooth texture, brighter tone, reduced pigmentation, softened lines. CQC registered, nurse-led. Bedford.',
+  title: 'Skin Reset | CO2 Fractional Laser for Women 40s, 50s & 60s | Clarity Clinic Bedford',
+  description: 'CO2 fractional laser designed for women ready to reclaim their skin. Smooth texture, brighter tone, reduced pigmentation, softened lines. CQC registered, nurse-led. Bedford.',
   keywords: [
     'skin reset',
-    'erbium yag laser Bedford',
-    'fractional ablative laser',
+    'CO2 fractional laser Bedford',
+    'CO2 fractional laser',
     'laser skin resurfacing Bedford',
     'women 40s 50s 60s skin treatment',
     'pigmentation treatment Bedford',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'This Is Your Moment | Skin Reset',
-    description: "You've taken care of everyone else. Now it's your turn. Erbium-YAG fractional laser for women in their 40s, 50s & 60s ready to reclaim their skin.",
+    description: "You've taken care of everyone else. Now it's your turn. CO2 fractional laser for women in their 40s, 50s & 60s ready to reclaim their skin.",
     type: 'website',
     locale: 'en_GB',
     url: 'https://www.laserbedford.co.uk/skin-reset',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Skin Reset | Your Moment',
-    description: "You've taken care of everyone else. Now it's your turn. Erbium-YAG fractional laser for mature skin.",
+    description: "You've taken care of everyone else. Now it's your turn. CO2 fractional laser for mature skin.",
     images: ['https://www.laserbedford.co.uk/images/practitioner.jpg'],
   },
   alternates: {
@@ -53,7 +53,7 @@ const skinResetSchema = {
       '@type': 'MedicalWebPage',
       '@id': 'https://www.laserbedford.co.uk/skin-reset/#webpage',
       url: 'https://www.laserbedford.co.uk/skin-reset',
-      name: 'Skin Reset | Erbium-YAG Laser Treatment for Women',
+      name: 'Skin Reset | CO2 Fractional Laser Treatment for Women',
       description: 'Fractional ablative laser treatment designed for women in their 40s, 50s & 60s. Smooth texture, brighter tone, reduced pigmentation, softened lines.',
       isPartOf: {
         '@id': 'https://www.laserbedford.co.uk/#website',
@@ -75,12 +75,12 @@ const skinResetSchema = {
     {
       '@type': 'MedicalProcedure',
       '@id': 'https://www.laserbedford.co.uk/skin-reset/#treatment',
-      name: 'Skin Reset - Erbium-YAG Fractional Ablative Laser',
+      name: 'Skin Reset - CO2 Fractional Laser',
       alternateName: 'Fractional Skin Resurfacing',
-      description: 'Erbium-YAG fractional ablative laser treatment specifically designed for women in their 40s, 50s, and 60s. Addresses texture, tone, pigmentation, sun damage, and fine lines for skin that looks healthy - not done.',
+      description: 'CO2 fractional laser treatment specifically designed for women in their 40s, 50s, and 60s. Addresses texture, tone, pigmentation, sun damage, and fine lines for skin that looks healthy - not done.',
       procedureType: 'Laser Skin Resurfacing',
       bodyLocation: 'Face',
-      howPerformed: 'The Erbium-YAG laser creates microscopic treatment zones in the skin, triggering the natural healing response to produce new collagen and healthier skin cells. Treatment is performed by a registered nurse in a CQC-registered clinic.',
+      howPerformed: 'The CO2 fractional laser creates microscopic treatment zones in the skin, triggering the natural healing response to produce new collagen and healthier skin cells. Treatment is performed by a registered nurse in a CQC-registered clinic.',
       preparation: 'Consultation with Claire Emmerson, RN to assess skin concerns and create a personalised treatment plan.',
       followup: '5-7 days of redness and peeling, similar to sunburn. Skin continues improving over following weeks.',
       status: 'Available',
@@ -97,7 +97,7 @@ const skinResetSchema = {
       '@type': 'Service',
       '@id': 'https://www.laserbedford.co.uk/skin-reset/#service',
       name: 'Skin Reset Treatment',
-      serviceType: 'Erbium-YAG Fractional Ablative Laser',
+      serviceType: 'CO2 Fractional Laser',
       description: 'Comprehensive skin rejuvenation for mature skin addressing texture, tone, pigmentation, and fine lines.',
       provider: {
         '@type': 'MedicalBusiness',
@@ -186,7 +186,7 @@ const skinResetSchema = {
           name: 'Am I too old for laser treatment?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'No, Erbium-YAG fractional ablative laser is excellent for mature skin. It\'s specifically designed to address concerns most common in women in their 40s, 50s, and 60s - including sun damage, age spots, fine lines, and overall skin texture. Your skin can respond beautifully to treatment at any age.',
+            text: 'No, CO2 fractional laser is excellent for mature skin. It\'s specifically designed to address concerns most common in women in their 40s, 50s, and 60s - including sun damage, age spots, fine lines, and overall skin texture. Your skin can respond beautifully to treatment at any age.',
           },
         },
         {
@@ -235,7 +235,7 @@ const skinResetSchema = {
     {
       '@type': 'VideoObject',
       name: 'Skin Reset - This Is Your Moment',
-      description: 'Erbium-YAG fractional ablative laser for women in their 40s, 50s & 60s ready to reclaim their skin.',
+      description: 'CO2 fractional laser for women in their 40s, 50s & 60s ready to reclaim their skin.',
       thumbnailUrl: 'https://www.laserbedford.co.uk/images/practitioner.jpg',
       uploadDate: '2025-01-27',
       contentUrl: 'https://storage.googleapis.com/msgsndr/8PNaWjnYgGoS1sfgwICL/media/697914aa4d506d04ae5aa1d8.mp4',

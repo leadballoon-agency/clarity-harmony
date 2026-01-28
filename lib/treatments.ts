@@ -77,7 +77,7 @@ export const treatments: Treatment[] = [
         answer: 'Most clients benefit from a course of 3-6 sessions, spaced 2-4 weeks apart. Your treatment plan will be tailored to your specific concerns during your skin analysis consultation.'
       }
     ],
-    metaTitle: 'Skin Tightening Bedford | ClearLift Pro | Clarity Cosmetics',
+    metaTitle: 'Skin Tightening Bedford | ClearLift Pro | Clarity Clinic',
     metaDescription: 'Non-invasive skin tightening with Alma Harmony ClearLift Pro in Bedford. No downtime, all skin types. Book your skin analysis with Claire Emmerson, RN.'
   },
   {
@@ -121,7 +121,7 @@ export const treatments: Treatment[] = [
         answer: 'Yes, Alma Harmony technology is safe and effective for all skin types (I-VI). Your treatment parameters will be customized to your specific skin type and concerns.'
       }
     ],
-    metaTitle: 'Skin Resurfacing Bedford | Laser Treatment | Clarity Cosmetics',
+    metaTitle: 'Skin Resurfacing Bedford | Laser Treatment | Clarity Clinic',
     metaDescription: 'Advanced laser skin resurfacing in Bedford with Alma Harmony. Improve texture, fine lines & wrinkles. Book your skin analysis with Claire Emmerson, RN.'
   },
   {
@@ -165,7 +165,7 @@ export const treatments: Treatment[] = [
         answer: 'Treated areas typically darken slightly before flaking off over 7-14 days, revealing clearer skin beneath. This is a normal part of the healing process.'
       }
     ],
-    metaTitle: 'Pigmentation Treatment Bedford | IPL & Laser | Clarity Cosmetics',
+    metaTitle: 'Pigmentation Treatment Bedford | IPL & Laser | Clarity Clinic',
     metaDescription: 'Remove age spots, sun damage & pigmentation in Bedford with Alma Harmony IPL & Q-Switch laser. Safe for all skin types. Book your skin analysis today.'
   },
   {
@@ -209,7 +209,7 @@ export const treatments: Treatment[] = [
         answer: 'Yes, ClearSkin Pro is safe and effective for all skin types (I-VI), including darker skin tones that may be at risk of post-inflammatory hyperpigmentation with other treatments.'
       }
     ],
-    metaTitle: 'Acne Treatment Bedford | ClearSkin Pro Laser | Clarity Cosmetics',
+    metaTitle: 'Acne Treatment Bedford | ClearSkin Pro Laser | Clarity Clinic',
     metaDescription: 'Treat active acne and acne scars in Bedford with Alma Harmony ClearSkin Pro. Safe for all skin types, no downtime. Book your skin analysis today.'
   },
   {
@@ -253,7 +253,7 @@ export const treatments: Treatment[] = [
         answer: 'Many spider veins and small vessels clear in 1-2 treatments. Rosacea and more extensive redness may require a course of 3+ sessions for optimal results.'
       }
     ],
-    metaTitle: 'Spider Vein & Rosacea Treatment Bedford | Clarity Cosmetics',
+    metaTitle: 'Spider Vein & Rosacea Treatment Bedford | Clarity Clinic',
     metaDescription: 'Remove spider veins, rosacea & facial redness in Bedford with Alma Harmony VascuPen & ClearVas laser. Book your skin analysis with Claire Emmerson, RN.'
   },
   {
@@ -297,7 +297,7 @@ export const treatments: Treatment[] = [
         answer: 'Most clients see best results with a course of 4-6 sessions, spaced 2-4 weeks apart. However, many notice visible improvement after just 1-2 treatments. Your personalized plan will be discussed during your skin analysis.'
       }
     ],
-    metaTitle: 'Bio-Boost Treatment Bedford | ELLE Award Winner | Clarity Cosmetics',
+    metaTitle: 'Bio-Boost Treatment Bedford | ELLE Award Winner | Clarity Clinic',
     metaDescription: 'Experience the ELLE Award-winning Bio-Boost multi-laser treatment in Bedford. Visible results, zero downtime. Book your skin analysis with Claire Emmerson, RN.'
   }
 ]

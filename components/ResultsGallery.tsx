@@ -106,7 +106,7 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
                   </h3>
                   {/* Hide long description on mobile */}
                   <p className="hidden sm:block text-white/90 text-sm sm:text-base max-w-2xl">
-                    Witness the remarkable improvement in skin texture, tone and overall radiance achieved with Alma Harmony treatments at Clarity Cosmetics Bedford.
+                    Witness the remarkable improvement in skin texture, tone and overall radiance achieved with Alma Harmony treatments at Clarity Clinic Bedford.
                   </p>
                   {/* Short description for mobile only */}
                   <p className="sm:hidden text-white/90 text-xs">
@@ -188,8 +188,17 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
 
         {/* Treatment Room */}
         <div className="mt-8 sm:mt-12">
-          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-premium bg-gradient-to-r from-primary-600 to-primary-700">
-            <div className="p-8 sm:p-12 text-white">
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-premium">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <img
+                src="/images/treatment.jpg"
+                alt="Clarity Clinic Bedford Treatment Room"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-primary-700/60"></div>
+            </div>
+            <div className="relative p-8 sm:p-12 lg:p-16 text-white min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-center">
               <div className="max-w-2xl">
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4">
                   Your Comfort is Our Priority
