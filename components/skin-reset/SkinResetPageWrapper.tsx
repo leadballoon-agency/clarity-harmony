@@ -7,6 +7,7 @@ import TrustIconsTicker from '@/components/TrustIconsTicker'
 import SkinResetAbout from '@/components/skin-reset/SkinResetAbout'
 import SkinResetAssessment from '@/components/skin-reset/SkinResetAssessment'
 import SkinResetTechnology from '@/components/skin-reset/SkinResetTechnology'
+import SkinResetReviews from '@/components/skin-reset/SkinResetReviews'
 import ResultsGallery from '@/components/ResultsGallery'
 import SkinResetFAQ from '@/components/skin-reset/SkinResetFAQ'
 import SkinResetCTA from '@/components/skin-reset/SkinResetCTA'
@@ -31,6 +32,7 @@ export default function SkinResetPageWrapper() {
         <SkinResetTechnology />
         <SkinResetAssessment onBookingClick={handleBookingClick} />
         <SkinResetAbout onBookingClick={handleBookingClick} />
+        <SkinResetReviews />
         <ResultsGallery onBookingClick={handleBookingClick} />
         <SkinResetFAQ onBookingClick={handleBookingClick} />
         <SkinResetCTA onBookingClick={handleBookingClick} />
