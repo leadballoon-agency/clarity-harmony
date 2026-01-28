@@ -28,8 +28,8 @@ export default function SkinResetPageWrapper() {
       <main className="overflow-hidden">
         <SkinResetHero />
         <TrustIconsTicker />
-        <SkinResetAssessment onBookingClick={handleBookingClick} />
         <SkinResetTechnology />
+        <SkinResetAssessment onBookingClick={handleBookingClick} />
         <SkinResetAbout onBookingClick={handleBookingClick} />
         <ResultsGallery onBookingClick={handleBookingClick} />
         <SkinResetFAQ onBookingClick={handleBookingClick} />
