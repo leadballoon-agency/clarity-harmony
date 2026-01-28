@@ -25,7 +25,7 @@ export default function SkinResetPageWrapper() {
       <ScrollToTop />
       <Navigation onBookingClick={handleBookingClick} />
       <main className="overflow-hidden">
-        <SkinResetHero onBookingClick={handleBookingClick} />
+        <SkinResetHero />
         <TrustIconsTicker />
         <SkinResetAssessment onBookingClick={handleBookingClick} />
         <SkinResetAbout onBookingClick={handleBookingClick} />

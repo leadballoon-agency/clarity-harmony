@@ -2,14 +2,10 @@
 
 import { useState } from 'react'
 
-interface SkinResetHeroProps {
-  onBookingClick?: () => void
-}
-
 const SKIN_RESET_VIDEO_SQUARE = 'https://storage.googleapis.com/msgsndr/8PNaWjnYgGoS1sfgwICL/media/697914a1480ea4b3bcd0667c.mp4'
 const SKIN_RESET_VIDEO_PORTRAIT = 'https://storage.googleapis.com/msgsndr/8PNaWjnYgGoS1sfgwICL/media/697914aa4d506d04ae5aa1d8.mp4'
 
-export default function SkinResetHero({ onBookingClick }: SkinResetHeroProps) {
+export default function SkinResetHero() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null)
 
   return (
