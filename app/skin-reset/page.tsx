@@ -3,12 +3,13 @@ import Script from 'next/script'
 import SkinResetPageWrapper from '@/components/skin-reset/SkinResetPageWrapper'
 
 export const metadata: Metadata = {
-  title: 'Skin Reset | CO2 Fractional Laser for Women 40s, 50s & 60s | Clarity Clinic Bedford',
-  description: 'CO2 fractional laser designed for women ready to reclaim their skin. Smooth texture, brighter tone, reduced pigmentation, softened lines. CQC registered, nurse-led. Bedford.',
+  title: 'Skin Reset | Alma Harmony SupErb Fractional Laser for Women 40s, 50s & 60s | Clarity Clinic Bedford',
+  description: 'Alma Harmony SupErb fractional laser resurfacing designed for women ready to reclaim their skin. Smooth texture, brighter tone, reduced pigmentation, softened lines. CQC registered, nurse-led. Bedford.',
   keywords: [
     'skin reset',
-    'CO2 fractional laser Bedford',
-    'CO2 fractional laser',
+    'Alma Harmony SupErb Bedford',
+    'SupErb fractional laser',
+    'Erbium YAG laser Bedford',
     'laser skin resurfacing Bedford',
     'women 40s 50s 60s skin treatment',
     'pigmentation treatment Bedford',
@@ -18,10 +19,11 @@ export const metadata: Metadata = {
     'Claire Emmerson',
     'Clarity Clinic Bedford',
     'CQC registered laser clinic',
+    'fractional laser resurfacing',
   ],
   openGraph: {
     title: 'This Is Your Moment | Skin Reset',
-    description: "You've taken care of everyone else. Now it's your turn. CO2 fractional laser for women in their 40s, 50s & 60s ready to reclaim their skin.",
+    description: "You've taken care of everyone else. Now it's your turn. Alma Harmony SupErb fractional laser resurfacing for women in their 40s, 50s & 60s ready to reclaim their skin.",
     type: 'website',
     locale: 'en_GB',
     url: 'https://www.laserbedford.co.uk/skin-reset',
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Skin Reset | Your Moment',
-    description: "You've taken care of everyone else. Now it's your turn. CO2 fractional laser for mature skin.",
+    description: "You've taken care of everyone else. Now it's your turn. Alma Harmony SupErb fractional laser for mature skin.",
     images: ['https://www.laserbedford.co.uk/images/practitioner.jpg'],
   },
   alternates: {
@@ -53,8 +55,8 @@ const skinResetSchema = {
       '@type': 'MedicalWebPage',
       '@id': 'https://www.laserbedford.co.uk/skin-reset/#webpage',
       url: 'https://www.laserbedford.co.uk/skin-reset',
-      name: 'Skin Reset | CO2 Fractional Laser Treatment for Women',
-      description: 'Fractional ablative laser treatment designed for women in their 40s, 50s & 60s. Smooth texture, brighter tone, reduced pigmentation, softened lines.',
+      name: 'Skin Reset | Alma Harmony SupErb Fractional Laser Treatment for Women',
+      description: 'Alma Harmony SupErb Erbium YAG fractional laser treatment designed for women in their 40s, 50s & 60s. Smooth texture, brighter tone, reduced pigmentation, softened lines.',
       isPartOf: {
         '@id': 'https://www.laserbedford.co.uk/#website',
       },
@@ -75,13 +77,13 @@ const skinResetSchema = {
     {
       '@type': 'MedicalProcedure',
       '@id': 'https://www.laserbedford.co.uk/skin-reset/#treatment',
-      name: 'Skin Reset - CO2 Fractional Laser',
-      alternateName: 'Fractional Skin Resurfacing',
-      description: 'CO2 fractional laser treatment specifically designed for women in their 40s, 50s, and 60s. Addresses texture, tone, pigmentation, sun damage, and fine lines for skin that looks healthy - not done.',
+      name: 'Skin Reset - Alma Harmony SupErb Fractional Laser',
+      alternateName: 'SupErb Erbium YAG Fractional Skin Resurfacing',
+      description: 'Alma Harmony SupErb Erbium YAG fractional laser treatment specifically designed for women in their 40s, 50s, and 60s. Addresses texture, tone, pigmentation, sun damage, and fine lines for skin that looks healthy - not done.',
       procedureType: 'Laser Skin Resurfacing',
-      bodyLocation: 'Face',
-      howPerformed: 'The CO2 fractional laser creates microscopic treatment zones in the skin, triggering the natural healing response to produce new collagen and healthier skin cells. Treatment is performed by a registered nurse in a CQC-registered clinic.',
-      preparation: 'Consultation with Claire Emmerson, RN to assess skin concerns and create a personalised treatment plan.',
+      bodyLocation: 'Face, Eyes, Neck',
+      howPerformed: 'The Alma Harmony SupErb Erbium YAG fractional laser creates thousands of microscopic treatment zones in the skin, triggering the natural healing response to produce new collagen and healthier skin cells. Treatment is performed by a registered nurse in a CQC-registered clinic.',
+      preparation: 'Professional skin analysis consultation with Claire Emmerson, RN using diagnostic imaging equipment to assess skin concerns below the surface and create a personalised treatment plan.',
       followup: '5-7 days of redness and peeling, similar to sunburn. Skin continues improving over following weeks.',
       status: 'Available',
       recognizingAuthority: {
@@ -92,12 +94,13 @@ const skinResetSchema = {
         '@type': 'MedicalSpecialty',
         name: 'Dermatology',
       },
+      suitableForDiet: 'Fitzpatrick skin types 1-5',
     },
     {
       '@type': 'Service',
       '@id': 'https://www.laserbedford.co.uk/skin-reset/#service',
       name: 'Skin Reset Treatment',
-      serviceType: 'CO2 Fractional Laser',
+      serviceType: 'Alma Harmony SupErb Fractional Laser',
       description: 'Comprehensive skin rejuvenation for mature skin addressing texture, tone, pigmentation, and fine lines.',
       provider: {
         '@type': 'MedicalBusiness',
@@ -160,7 +163,7 @@ const skinResetSchema = {
               '@type': 'Service',
               name: 'Skin Reset Treatment Course (3 sessions)',
             },
-            price: '995',
+            price: '795',
             priceCurrency: 'GBP',
           },
         ],
@@ -186,7 +189,55 @@ const skinResetSchema = {
           name: 'Am I too old for laser treatment?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'No, CO2 fractional laser is excellent for mature skin. It\'s specifically designed to address concerns most common in women in their 40s, 50s, and 60s - including sun damage, age spots, fine lines, and overall skin texture. Your skin can respond beautifully to treatment at any age.',
+            text: 'No, fractional laser resurfacing is excellent for mature skin. It\'s specifically designed to address concerns most common in women in their 40s, 50s, and 60s - including sun damage, age spots, fine lines, and overall skin texture. Your skin can respond beautifully to treatment at any age.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the difference between SupErb and CO2 laser?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'SupErb uses Erbium YAG technology which creates microscopic treatment channels WITHOUT vaporizing the top layer of skin - unlike CO2 which completely removes the surface layer. This means SupErb offers faster healing (5-7 days vs 2+ weeks for CO2), less discomfort, lower risk of complications like hyperpigmentation or scarring, and suitability for a wider range of skin tones (Fitzpatrick 1-5).',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What should I do before treatment?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'To prepare your skin: stop using retinol/vitamin A products 7 days before treatment, avoid injectable treatments (Botox, fillers) for 4 weeks prior, discontinue acid exfoliators 7 days before, and avoid excessive sun exposure in the weeks leading up to treatment.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the aftercare like?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Aftercare includes: no makeup on the day of treatment, apply SPF 50 daily (essential), keep skin moisturised as it heals, wait 5-7 days until fully healed before reintroducing active skincare products, and avoid direct sun exposure for 4-6 weeks after treatment.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'When will I see results and how long do they last?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'You\'ll notice immediate improvement in skin texture and brightness once initial redness settles after 5-7 days. Full collagen remodeling continues for 3-12 months after treatment. Results typically last 2-5 years with good skincare and sun protection. Many women opt for annual maintenance treatments.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is SupErb suitable for darker skin tones?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes - SupErb is suitable for Fitzpatrick skin types 1-5, which covers a wide range of skin tones from very fair to olive and light brown. This is a significant advantage over CO2 lasers. Claire carefully adjusts the laser settings for each individual\'s skin type.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can you treat areas other than the face?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, SupErb is effective for the full face including the delicate eye area (crow\'s feet, under-eye texture), neck, and décolletage. Claire customises the settings for each area to ensure optimal results while respecting the different skin thicknesses.',
           },
         },
         {
@@ -235,12 +286,21 @@ const skinResetSchema = {
     {
       '@type': 'VideoObject',
       name: 'Skin Reset - This Is Your Moment',
-      description: 'CO2 fractional laser for women in their 40s, 50s & 60s ready to reclaim their skin.',
+      description: 'Alma Harmony SupErb fractional laser for women in their 40s, 50s & 60s ready to reclaim their skin.',
       thumbnailUrl: 'https://www.laserbedford.co.uk/images/practitioner.jpg',
       uploadDate: '2025-01-27',
       contentUrl: 'https://storage.googleapis.com/msgsndr/8PNaWjnYgGoS1sfgwICL/media/697914aa4d506d04ae5aa1d8.mp4',
       embedUrl: 'https://storage.googleapis.com/msgsndr/8PNaWjnYgGoS1sfgwICL/media/697914aa4d506d04ae5aa1d8.mp4',
       duration: 'PT1M5S',
+    },
+    {
+      '@type': 'VideoObject',
+      name: 'Professional Skin Analysis Machine',
+      description: 'Advanced diagnostic skin analysis imaging at Clarity Clinic Bedford. See below the surface of your skin to identify hidden concerns and create a personalised treatment plan.',
+      thumbnailUrl: 'https://www.laserbedford.co.uk/images/practitioner.jpg',
+      uploadDate: '2025-01-28',
+      contentUrl: 'https://storage.googleapis.com/msgsndr/8PNaWjnYgGoS1sfgwICL/media/697a2df7a1d79e527db52eed.mp4',
+      embedUrl: 'https://storage.googleapis.com/msgsndr/8PNaWjnYgGoS1sfgwICL/media/697a2df7a1d79e527db52eed.mp4',
     },
   ],
 }

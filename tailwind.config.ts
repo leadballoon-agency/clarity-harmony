@@ -10,16 +10,16 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#b9e6fe',
-          300: '#7cd4fd',
-          400: '#36bffa',
-          500: '#0ba5ec', // Bright teal blue - Main brand color
-          600: '#0086c9',
-          700: '#026aa2',
-          800: '#065986',
-          900: '#0b4a6f',
+          50: '#e6f0ff',
+          100: '#b3d1ff',
+          200: '#80b3ff',
+          300: '#4d94ff',
+          400: '#1a75ff',
+          500: '#0066ff', // Bright royal blue - Main brand color
+          600: '#0052cc',
+          700: '#003d99',
+          800: '#002966',
+          900: '#001433',
         },
         harmony: {
           50: '#f8fafc',
