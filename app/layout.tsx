@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Open_Sans, Montserrat } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const openSans = Open_Sans({
@@ -480,6 +481,12 @@ export default function RootLayout({
       </head>
       <body className={`${openSans.variable} ${montserrat.variable} font-sans`}>
         {children}
+        <Script
+          src="https://followupsystems.co.uk/widget.js"
+          data-key="35e952215fb8e9a5efe2c565cc8cd8d7"
+          data-project="cmmm8204r0000afhjqmumzs4g"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
