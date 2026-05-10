@@ -82,14 +82,14 @@ export default function SkinResetAssessment({ onBookingClick }: SkinResetAssessm
                     <p className="font-semibold text-neutral-800">Full Face, Eyes &amp; Neck</p>
                     <p className="text-sm text-neutral-500">Single session</p>
                   </div>
-                  <p className="text-2xl font-bold text-neutral-800">£395</p>
+                  <p className="text-2xl font-bold text-neutral-800">£450</p>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-primary-50 rounded-xl border-2 border-primary-200">
                   <div>
                     <p className="font-semibold text-neutral-800">Course of 3 Sessions</p>
-                    <p className="text-sm text-primary-600 font-medium">Save £390</p>
+                    <p className="text-sm text-primary-600 font-medium">Save £355</p>
                   </div>
-                  <p className="text-2xl font-bold text-primary-600">£795</p>
+                  <p className="text-2xl font-bold text-primary-600">£995</p>
                 </div>
               </div>
 

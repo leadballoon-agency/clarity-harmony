@@ -154,7 +154,7 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
             { number: '10+', label: 'Years Experience' },
             { number: 'RN', label: 'Nurse-Led Care' },
             { number: 'CQC', label: 'Registered' },
-            { number: '£395', label: 'Starting From' }
+            { number: '£450', label: 'Starting From' }
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <p className="text-2xl sm:text-3xl font-bold gradient-text mb-1 sm:mb-2">{stat.number}</p>
