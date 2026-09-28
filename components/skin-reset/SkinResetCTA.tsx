@@ -1,23 +1,34 @@
+import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
+
 interface SkinResetCTAProps {
   onBookingClick: () => void
 }
 
 export default function SkinResetCTA({ onBookingClick }: SkinResetCTAProps) {
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600">
-      <div className="max-w-2xl mx-auto section-padding text-center text-white">
-        <h2 className="font-display text-lg sm:text-xl md:text-2xl font-bold leading-tight">
-          Looking in the mirror and loving what you see
-          <span className="block mt-1 text-primary-100">isn&apos;t vanity. It&apos;s self-respect.</span>
-        </h2>
-
-        <div className="mt-6 sm:mt-8">
-          <button
-            onClick={onBookingClick}
-            className="inline-flex items-center justify-center bg-white text-primary-600 px-6 py-3 rounded-full font-bold text-base hover:shadow-xl transition-all duration-300"
-          >
-            Book Your Consultation
-          </button>
+    <section className="bg-ink text-white">
+      <div className="grid lg:grid-cols-2">
+        <div className="relative aspect-[3/2] lg:aspect-auto lg:min-h-[440px]">
+          <Image
+            src="/images/shoot/DSC09759.jpg"
+            alt="Claire explaining results to a client holding a mirror"
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="flex items-center px-4 sm:px-10 lg:px-16 py-14 sm:py-16">
+          <div className="max-w-md mx-auto lg:mx-0 text-center lg:text-left">
+            <h2 className="font-display text-white text-[26px] sm:text-[32px] lg:text-[36px] leading-[1.15]">
+              Looking in the mirror and loving what you&nbsp;see
+              <em className="block italic text-white/75">isn&apos;t vanity. It&apos;s self&#8209;respect.</em>
+            </h2>
+            <button onClick={onBookingClick} className="btn-light mt-8">
+              Book Your Consultation
+              <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

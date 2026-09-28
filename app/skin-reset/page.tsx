@@ -4,7 +4,7 @@ import SkinResetPageWrapper from '@/components/skin-reset/SkinResetPageWrapper'
 
 export const metadata: Metadata = {
   title: 'Skin Reset | Alma Harmony SupErb Fractional Laser for Women 40s, 50s & 60s | Clarity Clinic Bedford',
-  description: 'Alma Harmony SupErb fractional laser resurfacing designed for women ready to reclaim their skin. Smooth texture, brighter tone, reduced pigmentation, softened lines. CQC registered, nurse-led. Bedford.',
+  description: 'Alma Harmony SupErb fractional laser resurfacing designed for women ready to reclaim their skin. Smooth texture, brighter tone, reduced pigmentation, softened lines. CQC registered, midwife & nurse-led. Bedford.',
   keywords: [
     'skin reset',
     'Alma Harmony SupErb Bedford',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: 'https://www.laserbedford.co.uk/images/practitioner.jpg',
         width: 1200,
         height: 630,
-        alt: 'Claire Emmerson, RN - Skin Reset Specialist at Clarity Clinic Bedford',
+        alt: 'Claire Emmerson, Midwife & Aesthetic Nurse - Skin Reset Specialist at Clarity Clinic Bedford',
       },
     ],
   },
@@ -83,7 +83,7 @@ const skinResetSchema = {
       procedureType: 'Laser Skin Resurfacing',
       bodyLocation: 'Face, Eyes, Neck',
       howPerformed: 'The Alma Harmony SupErb Erbium YAG fractional laser creates thousands of microscopic treatment zones in the skin, triggering the natural healing response to produce new collagen and healthier skin cells. Treatment is performed by a registered nurse in a CQC-registered clinic.',
-      preparation: 'Professional skin analysis consultation with Claire Emmerson, RN using diagnostic imaging equipment to assess skin concerns below the surface and create a personalised treatment plan.',
+      preparation: 'Professional skin analysis consultation with Claire Emmerson, Midwife & Aesthetic Nurse using diagnostic imaging equipment to assess skin concerns below the surface and create a personalised treatment plan.',
       followup: '5-7 days of redness and peeling, similar to sunburn. Skin continues improving over following weeks.',
       status: 'Available',
       recognizingAuthority: {
@@ -143,7 +143,7 @@ const skinResetSchema = {
             itemOffered: {
               '@type': 'Service',
               name: 'Skin Reset Consultation',
-              description: 'Professional skin assessment with Claire Emmerson, RN. Fully redeemable against treatment.',
+              description: 'Professional skin assessment with Claire Emmerson, Midwife & Aesthetic Nurse. Fully redeemable against treatment.',
             },
             price: '25',
             priceCurrency: 'GBP',
@@ -174,7 +174,7 @@ const skinResetSchema = {
       '@type': 'Person',
       '@id': 'https://www.laserbedford.co.uk/#person',
       name: 'Claire Emmerson',
-      jobTitle: 'Registered Nurse & Advanced Aesthetic Practitioner',
+      jobTitle: 'Midwife & Aesthetic Nurse, Independent Prescriber',
       image: 'https://www.laserbedford.co.uk/images/practitioner.jpg',
       description: 'CQC Registered Independent Prescriber specialising in skin rejuvenation treatments for women. Years of experience in women\'s health and aesthetic medicine.',
       worksFor: {

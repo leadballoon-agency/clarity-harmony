@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { ArrowRight, Plus } from 'lucide-react'
+import { tidy } from '@/lib/typography'
 
 interface SkinResetFAQProps {
   onBookingClick?: () => void
@@ -57,58 +59,57 @@ export default function SkinResetFAQ({ onBookingClick }: SkinResetFAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-16 sm:py-20 md:py-28 bg-gradient-to-b from-primary-50 to-white">
-      <div className="max-w-4xl mx-auto section-padding">
-        <div className="text-center mb-8 sm:mb-12">
-          <span className="text-primary-600 font-medium tracking-wider uppercase text-sm">FAQ</span>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mt-2">
-            Common Questions
+    <section id="faq" className="py-20 sm:py-24 lg:py-28 bg-white border-t border-sand-200">
+      <div className="max-w-3xl mx-auto section-padding">
+        <div className="text-center mb-10 sm:mb-12">
+          <p className="eyebrow">FAQ</p>
+          <h2 className="h2-display mt-4">
+            Common <em className="italic">questions</em>
           </h2>
         </div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 sm:py-6 text-left flex justify-between items-center hover:bg-primary-50 transition-colors"
-              >
-                <span className="font-semibold text-base sm:text-lg lg:text-xl pr-4">{faq.question}</span>
-                <div className={`w-8 h-8 rounded-full bg-gradient-to-r from-primary-400 to-primary-600 flex items-center justify-center flex-shrink-0 transition-transform ${
-                  openIndex === index ? 'rotate-180' : ''
-                }`}>
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </button>
+        <div className="border-t border-sand-200">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index
+            return (
+              <div key={index} className="border-b border-sand-200">
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  aria-expanded={isOpen}
+                  className="w-full py-5 sm:py-6 text-left flex justify-between items-start gap-6 group"
+                >
+                  <span className="font-display text-[18px] sm:text-[20px] leading-snug text-ink text-balance group-hover:text-primary-700 transition-colors">
+                    {tidy(faq.question)}
+                  </span>
+                  <Plus
+                    className={`w-5 h-5 mt-1 shrink-0 text-harmony-500 transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}
+                    strokeWidth={1.25}
+                  />
+                </button>
 
-              <div className={`overflow-hidden transition-all duration-300 ${
-                openIndex === index ? 'max-h-96' : 'max-h-0'
-              }`}>
-                <div className="px-6 pb-6 text-base text-neutral-600 leading-relaxed">
-                  {faq.answer}
+                <div
+                  className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                    isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="pb-6 pr-8 text-[15px] sm:text-base text-harmony-600 leading-relaxed max-w-[65ch]">
+                      {tidy(faq.answer)}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         {/* CTA */}
-        <div className="mt-10 text-center">
-          <p className="text-neutral-600 mb-4">Have more questions? Book a consultation to discuss your specific concerns.</p>
+        <div className="mt-12 text-center">
+          <p className="text-harmony-600 mb-5 max-w-md mx-auto">Have more questions? Book a consultation to discuss your specific&nbsp;concerns.</p>
           {onBookingClick && (
-            <button
-              onClick={onBookingClick}
-              className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-7 py-3.5 rounded-full font-medium hover:shadow-xl transition-all duration-300 hover:scale-105"
-            >
+            <button onClick={onBookingClick} className="btn-primary">
               Book Your Consultation
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+              <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
             </button>
           )}
         </div>

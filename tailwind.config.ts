@@ -9,6 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Warm editorial neutrals for the 2026 refresh
+        ivory: '#faf8f4',
+        sand: {
+          50: '#f7f4ef',
+          100: '#f0ebe3',
+          200: '#e4ddd2',
+          300: '#d3c9ba',
+        },
+        ink: '#1d2433',
         primary: {
           50: '#e6f0ff',
           100: '#b3d1ff',
@@ -71,8 +80,8 @@ const config: Config = {
         }
       },
       fontFamily: {
-        'display': ['Montserrat', 'sans-serif'],
-        'sans': ['Open Sans', 'system-ui', 'sans-serif'],
+        'display': ['var(--font-display)', 'Georgia', 'serif'],
+        'sans': ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

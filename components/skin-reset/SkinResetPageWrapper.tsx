@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { ArrowRight } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import SkinResetHero from '@/components/skin-reset/SkinResetHero'
 import TrustIconsTicker from '@/components/TrustIconsTicker'
@@ -17,6 +18,15 @@ import ScrollToTop from '@/components/ScrollToTop'
 
 export default function SkinResetPageWrapper() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
+
+  // Floating "Book Now" only appears once the visitor has scrolled past the hero
+  const [showFloatingCta, setShowFloatingCta] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setShowFloatingCta(window.scrollY > window.innerHeight * 0.9)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const handleBookingClick = () => {
     setIsBookingModalOpen(true)
@@ -48,12 +58,14 @@ export default function SkinResetPageWrapper() {
       {/* Floating Book Now Button */}
       <button
         onClick={handleBookingClick}
-        className="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 flex items-center group"
+        className={`fixed bottom-5 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:right-24 z-40 btn-primary !min-h-0 !py-3 !px-5 shadow-lg shadow-ink/10 group transition-opacity duration-300 ${
+          showFloatingCta ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        aria-hidden={!showFloatingCta}
+        tabIndex={showFloatingCta ? 0 : -1}
       >
-        <span className="mr-2">Book Now</span>
-        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </svg>
+        Book Now
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" strokeWidth={1.5} />
       </button>
     </>
   )

@@ -67,7 +67,7 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
             </div>
 
             <p className="text-base sm:text-lg md:text-xl text-neutral-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Award-winning laser technology for skin tightening, resurfacing and rejuvenation. Nurse-led by Claire Emmerson, RN | Bedford
+              Award-winning laser technology for skin tightening, resurfacing and rejuvenation. Midwife & nurse-led by Claire Emmerson | Bedford
             </p>
 
             {/* CTA Buttons */}
@@ -103,8 +103,8 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
               </div>
               <div className="text-neutral-300">|</div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-primary-600">RN</p>
-                <p className="text-xs text-neutral-600">Nurse-Led</p>
+                <p className="text-2xl font-bold text-primary-600">Midwife</p>
+                <p className="text-xs text-neutral-600">&amp; nurse-led</p>
               </div>
               <div className="text-neutral-300">|</div>
               <div className="text-center">
@@ -173,7 +173,7 @@ export default function PremiumHero({ onBookingClick }: PremiumHeroProps) {
               <div className="hidden lg:block absolute bottom-8 left-1/2 -translate-x-1/2 w-full max-w-lg">
                 <div className="bg-white/90 backdrop-blur-lg rounded-2xl p-6 shadow-xl">
                   <div className="text-center">
-                    <h3 className="text-xl font-bold text-neutral-800 mb-2">Claire Emmerson, RN - Alma Harmony Specialist</h3>
+                    <h3 className="text-xl font-bold text-neutral-800 mb-2">Claire Emmerson, Midwife & Aesthetic Nurse - Alma Harmony Specialist</h3>
                     <div className="flex justify-center items-center space-x-2 text-primary-600">
                       <span className="font-medium">Independent Prescriber</span>
                       <span className="text-primary-300">•</span>

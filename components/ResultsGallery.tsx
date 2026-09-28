@@ -1,6 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import Image from 'next/image'
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { tidy } from '@/lib/typography'
 
 interface ResultsGalleryProps {
   onBookingClick?: () => void
@@ -47,143 +50,172 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
     },
   ]
 
+  const close = useCallback(() => setSelectedImage(null), [])
+  const step = useCallback(
+    (dir: number) =>
+      setSelectedImage((i) => (i === null ? i : (i + dir + results.length) % results.length)),
+    [results.length]
+  )
+
+  useEffect(() => {
+    if (selectedImage === null) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') close()
+      if (e.key === 'ArrowRight') step(1)
+      if (e.key === 'ArrowLeft') step(-1)
+    }
+    document.addEventListener('keydown', onKey)
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = prev
+    }
+  }, [selectedImage, close, step])
+
   return (
-    <section id="results" className="py-12 sm:py-16 md:py-24 bg-gradient-to-b from-primary-50 to-white">
-      <div className="max-w-7xl mx-auto section-padding">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <span className="text-primary-600 font-medium tracking-wider uppercase text-xs sm:text-sm">Real Results</span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-2 sm:mt-4">
-            Transformations That
-            <span className="block gradient-text">Speak For Themselves</span>
+    <section id="results" className="py-20 sm:py-24 lg:py-28 bg-ivory">
+      <div className="max-w-6xl mx-auto section-padding">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+          <p className="eyebrow">Real Results</p>
+          <h2 className="h2-display mt-4">
+            Transformations that <em className="italic">speak for themselves</em>
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-neutral-600 mt-2 sm:mt-4 max-w-2xl mx-auto px-4">
-            Browse our gallery of real patient results
+          <p className="text-[16px] sm:text-[17px] text-harmony-600 mt-4">
+            Browse our gallery of real patient&nbsp;results
           </p>
         </div>
 
-        {/* Results Grid - 2 Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-          {results.map((result, index) => (
-            <div
-              key={index}
-              className={`group relative bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-premium sm:hover:shadow-premium-lg cursor-pointer transition-all duration-300 ${
-                result.featured ? 'md:col-span-2' : ''
-              }`}
-              onClick={() => setSelectedImage(index)}
-            >
-              {/* Before/After Labels */}
-              <div className="absolute top-2 sm:top-4 left-2 sm:left-4 z-10 flex gap-1.5 sm:gap-2">
-                <span className="bg-white/90 backdrop-blur px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium">
-                  Before
-                </span>
-                <span className="bg-primary-500/90 backdrop-blur text-white px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium">
-                  After
-                </span>
-              </div>
-
-              {/* Time Badge */}
-              <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-10 bg-white/90 backdrop-blur rounded-full px-2 sm:px-3 py-0.5 sm:py-1">
-                <span className="text-[10px] sm:text-xs font-medium text-neutral-700">{result.time}</span>
-              </div>
-
-              {/* Image Container */}
-              <div className={`relative overflow-hidden ${result.featured ? 'aspect-video' : 'aspect-square'}`}>
-                <img
-                  src={result.image}
-                  alt={result.title}
-                  className="w-full h-full object-cover sm:group-hover:scale-105 transition-transform duration-500"
-                />
-
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 sm:from-black/50 via-transparent to-transparent sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-
-              {/* Content */}
-              <div className="p-4 sm:p-6">
-                <h3 className="font-bold text-base sm:text-lg lg:text-xl mb-1 sm:mb-2">{result.title}</h3>
-                <p className="text-xs sm:text-sm lg:text-base text-neutral-600">{result.description}</p>
-
-                <div className="mt-3 sm:mt-4 flex items-center text-primary-600 font-medium text-sm">
-                  <span>View Details</span>
-                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1.5 sm:ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Disclaimer */}
-        <div className="mt-6 text-center">
-          <p className="text-xs sm:text-sm text-neutral-500 italic">
-            Results courtesy of Alma Lasers. Individual results may vary. Consultation required to determine suitability.
-          </p>
-        </div>
-
-        {/* Treatment Room Section */}
-        <div className="mt-8 sm:mt-12">
-          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-premium h-[400px] sm:h-[500px] lg:h-[600px]">
-            <img
-              src="/images/treatment.jpg"
-              alt="Clarity Clinic Bedford Treatment Room"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/75 sm:from-black/60 via-black/50 sm:via-black/40 to-transparent flex items-center">
-              <div className="p-5 sm:p-8 md:p-12 max-w-full sm:max-w-lg">
-                <h3 className="text-white text-2xl sm:text-2xl lg:text-3xl font-bold leading-tight mb-3 sm:mb-4">
-                  Welcome to Clarity Clinic Bedford
-                </h3>
-                <p className="text-white/95 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
-                  Step into our modern, welcoming clinic designed for your comfort and relaxation during your laser treatment journey.
-                </p>
+        {/* Results gallery: swipe row on mobile, 2-up on tablet, 3 + 2 centred on desktop.
+            Tiles stay at or below ~330px so the supplied composites are never upscaled. */}
+        <div className="max-w-[1040px] mx-auto">
+          <ul
+            className="-mx-4 px-4 sm:mx-0 sm:px-0 flex sm:flex-wrap sm:justify-center gap-5 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-px-4 pb-2 sm:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            aria-label="Before and after results"
+          >
+            {results.map((result, index) => (
+              <li
+                key={index}
+                className="snap-start shrink-0 basis-[72%] sm:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)]"
+              >
                 <button
-                  onClick={onBookingClick}
-                  className="inline-flex items-center bg-white text-primary-600 px-5 sm:px-6 py-3 sm:py-3 rounded-full font-semibold text-sm sm:text-base hover:shadow-lg transition-all duration-300"
+                  type="button"
+                  onClick={() => setSelectedImage(index)}
+                  className="group block w-full text-left"
+                  aria-label={`View ${result.title} before and after`}
                 >
-                  Schedule Consultation
+                  <div className="relative aspect-square rounded-[10px] overflow-hidden bg-sand-50 border border-sand-200 group-hover:border-sand-300 transition-colors">
+                    <Image
+                      src={encodeURI(result.image)}
+                      alt={`${result.title} before and after`}
+                      fill
+                      sizes="(min-width: 1024px) 330px, (min-width: 640px) 45vw, 72vw"
+                      className="object-contain p-2"
+                    />
+                    <span className="absolute top-2.5 left-2.5 bg-white/90 text-harmony-600 text-[10px] font-medium uppercase tracking-[0.12em] px-2 py-0.5 rounded">
+                      Before / After
+                    </span>
+                  </div>
+                  <p className="mt-3.5 text-[11px] font-medium uppercase tracking-[0.16em] text-ink group-hover:text-primary-700 transition-colors">
+                    {result.title}
+                  </p>
+                  <p className="mt-1 text-sm text-harmony-500 leading-snug">{tidy(result.description)}</p>
                 </button>
-              </div>
+              </li>
+            ))}
+          </ul>
+
+          {/* Disclaimer - must remain clearly visible */}
+          <p className="mt-6 text-center text-[13px] text-harmony-500 max-w-xl mx-auto">
+            Results courtesy of Alma Lasers. Individual results may vary. Consultation required to determine&nbsp;suitability.
+          </p>
+        </div>
+
+        {/* Treatment Room */}
+        <div className="mt-16 sm:mt-20 relative rounded-2xl overflow-hidden h-[440px] sm:h-[480px] lg:h-[540px] bg-ink">
+          <Image
+            src="/images/shoot/DSC09678.jpg"
+            alt="The treatment room at Clarity Clinic Bedford with the Alma Harmony laser"
+            fill
+            sizes="(min-width: 1152px) 1104px, 100vw"
+            className="object-cover object-[60%_50%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-ink/85 via-ink/50 to-ink/0 flex items-end sm:items-center">
+            <div className="p-6 sm:p-10 lg:p-14 max-w-md">
+              <h3 className="font-display text-white text-[26px] sm:text-[30px] leading-[1.15]">
+                Welcome to Clarity Clinic <em className="italic">Bedford</em>
+              </h3>
+              <p className="mt-4 text-white/85 text-[15px] sm:text-base leading-relaxed">
+                Step into our modern, welcoming clinic designed for your comfort and relaxation during your laser treatment&nbsp;journey.
+              </p>
+              <button onClick={onBookingClick} className="btn-light mt-6">
+                Schedule Consultation
+              </button>
             </div>
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-10 sm:mt-12 lg:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        {/* Stats */}
+        <dl className="mt-14 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-y-8 border-t border-sand-200 pt-10">
           {[
             { number: '10+', label: 'Years Experience' },
-            { number: 'RN', label: 'Nurse-Led Care' },
+            { number: 'Midwife', label: '& Nurse-Led Care' },
             { number: 'CQC', label: 'Registered' },
             { number: '£450', label: 'Starting From' }
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <p className="text-2xl sm:text-3xl font-bold gradient-text mb-1 sm:mb-2">{stat.number}</p>
-              <p className="text-xs sm:text-sm text-neutral-600">{stat.label}</p>
+              <dt className="font-display text-[28px] sm:text-[32px] leading-none text-ink">{stat.number}</dt>
+              <dd className="mt-2 text-xs sm:text-sm text-harmony-500">{stat.label}</dd>
             </div>
           ))}
-        </div>
+        </dl>
 
-        {/* Lightbox Modal */}
+        {/* Lightbox */}
         {selectedImage !== null && (
           <div
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-3 sm:p-4"
-            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 bg-ink/90 z-50 flex items-center justify-center p-4 sm:p-8"
+            onClick={close}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${results[selectedImage].title} before and after`}
           >
-            <div className="relative max-w-4xl w-full">
+            <figure className="relative flex flex-col items-center max-w-full" onClick={(e) => e.stopPropagation()}>
               <img
-                src={results[selectedImage].image}
-                alt={results[selectedImage].title}
-                className="w-full rounded-lg"
+                src={encodeURI(results[selectedImage].image)}
+                alt={`${results[selectedImage].title} before and after`}
+                className="block max-w-full max-h-[75vh] w-auto h-auto rounded-[10px] bg-white"
               />
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white/90 backdrop-blur rounded-full p-1.5 sm:p-2 hover:bg-white transition"
-              >
-                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
+              <figcaption className="mt-4 text-center">
+                <span className="block text-[11px] font-medium uppercase tracking-[0.16em] text-white">
+                  {results[selectedImage].title}
+                </span>
+                <span className="block mt-1 text-xs text-white/65">
+                  Results courtesy of Alma Lasers. Individual results may&nbsp;vary.
+                </span>
+              </figcaption>
+            </figure>
+
+            <button
+              onClick={close}
+              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5" strokeWidth={1.5} />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); step(-1) }}
+              className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              aria-label="Previous result"
+            >
+              <ChevronLeft className="w-5 h-5" strokeWidth={1.5} />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); step(1) }}
+              className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              aria-label="Next result"
+            >
+              <ChevronRight className="w-5 h-5" strokeWidth={1.5} />
+            </button>
           </div>
         )}
       </div>
