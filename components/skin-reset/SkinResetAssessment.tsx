@@ -24,7 +24,7 @@ export default function SkinResetAssessment({ onBookingClick }: SkinResetAssessm
                 src="/images/shoot/DSC09764.jpg"
                 alt="Claire talking a client through her skin analysis on an iPad"
                 fill
-                sizes="(min-width: 1152px) 540px, (min-width: 1024px) 47vw, 100vw"
+                sizes="(min-width: 1152px) 620px, (min-width: 1024px) 54vw, 100vw"
                 className="object-cover object-[35%_50%]"
               />
             </div>

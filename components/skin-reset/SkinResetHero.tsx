@@ -84,7 +84,9 @@ export default function SkinResetHero() {
                   alt="A smiling client admiring her skin in a hand mirror at Clarity Clinic Bedford"
                   fill
                   priority
-                  sizes="(min-width: 1152px) 540px, (min-width: 1024px) 47vw, 100vw"
+                  fetchPriority="high"
+                  /* 5:6 box over a 3:2 photo: object-cover renders the image ~1.8x the box width on desktop */
+                  sizes="(min-width: 1152px) 980px, (min-width: 1024px) 85vw, 100vw"
                   className="object-cover object-[30%_50%]"
                 />
 

@@ -97,7 +97,7 @@ export default function SkinResetTechnology() {
               src="/images/shoot/DSC09743.jpg"
               alt="Laser treatment in progress at Clarity Clinic Bedford"
               fill
-              sizes="(min-width: 1152px) 540px, (min-width: 1024px) 47vw, 100vw"
+              sizes="(min-width: 1152px) 620px, (min-width: 1024px) 54vw, 100vw"
               className="object-cover"
             />
           </div>
