@@ -325,7 +325,7 @@ export default function TreatmentPageTemplate({ treatment }: TreatmentPageTempla
             Ready to Discover If {treatment.shortName} Is Right for You?
           </h2>
           <p className="text-neutral-300 mb-10 max-w-2xl mx-auto text-lg">
-            Book your professional skin analysis with Claire Emmerson, RN to receive a personalised treatment plan tailored to your unique skin concerns.
+            Book your professional skin analysis with Claire Emmerson, Midwife & Aesthetic Nurse to receive a personalised treatment plan tailored to your unique skin concerns.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -363,7 +363,7 @@ export default function TreatmentPageTemplate({ treatment }: TreatmentPageTempla
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
               </svg>
-              <span className="text-sm">Nurse-Led Clinic</span>
+              <span className="text-sm">Midwife &amp; Nurse-Led Clinic</span>
             </div>
             <div className="flex items-center gap-2 text-neutral-400">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

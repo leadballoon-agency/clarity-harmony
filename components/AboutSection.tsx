@@ -10,7 +10,7 @@ export default function AboutSection({ onBookingClick }: AboutSectionProps) {
           <span className="text-primary-600 font-medium tracking-wider uppercase text-sm">Meet Your Practitioner</span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-2 sm:mt-4">
             Expert Care from
-            <span className="block gradient-text">Claire Emmerson, RN</span>
+            <span className="block gradient-text">Claire Emmerson, Midwife & Aesthetic Nurse</span>
           </h2>
         </div>
 
@@ -45,12 +45,12 @@ export default function AboutSection({ onBookingClick }: AboutSectionProps) {
           <div className="space-y-5 sm:space-y-7 order-2 lg:order-2">
             <div className="lg:hidden text-center">
               <h3 className="font-display text-3xl sm:text-4xl font-bold">
-                Registered Nurse & Alma Harmony Specialist
+                Midwife, Aesthetic Nurse & Alma Harmony Specialist
               </h3>
             </div>
             <div className="hidden lg:block">
               <h3 className="font-display text-3xl font-bold">
-                Claire Emmerson, RN
+                Claire Emmerson, Midwife & Aesthetic Nurse
                 <span className="block text-xl text-primary-600 font-normal mt-2">Independent Prescriber & Advanced Aesthetic Practitioner</span>
               </h3>
             </div>

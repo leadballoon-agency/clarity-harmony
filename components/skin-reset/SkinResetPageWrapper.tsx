@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import SkinResetHero from '@/components/skin-reset/SkinResetHero'
@@ -18,6 +18,15 @@ import ScrollToTop from '@/components/ScrollToTop'
 
 export default function SkinResetPageWrapper() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
+
+  // Floating "Book Now" only appears once the visitor has scrolled past the hero
+  const [showFloatingCta, setShowFloatingCta] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setShowFloatingCta(window.scrollY > window.innerHeight * 0.9)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const handleBookingClick = () => {
     setIsBookingModalOpen(true)
@@ -49,7 +58,11 @@ export default function SkinResetPageWrapper() {
       {/* Floating Book Now Button */}
       <button
         onClick={handleBookingClick}
-        className="fixed bottom-5 right-5 z-40 btn-primary !min-h-0 !py-3 !px-5 shadow-lg shadow-ink/10 group"
+        className={`fixed bottom-5 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:right-24 z-40 btn-primary !min-h-0 !py-3 !px-5 shadow-lg shadow-ink/10 group transition-opacity duration-300 ${
+          showFloatingCta ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        aria-hidden={!showFloatingCta}
+        tabIndex={showFloatingCta ? 0 : -1}
       >
         Book Now
         <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" strokeWidth={1.5} />

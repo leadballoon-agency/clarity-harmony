@@ -242,7 +242,7 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
               </div>
 
               <p className="text-sm text-neutral-500 mb-6">
-                Book a skin analysis with Claire Emmerson, RN to discuss your personalized treatment plan
+                Book a skin analysis with Claire Emmerson, Midwife & Aesthetic Nurse to discuss your personalized treatment plan
               </p>
 
               <div className="flex flex-col gap-3 sm:gap-4">

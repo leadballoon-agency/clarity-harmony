@@ -78,7 +78,7 @@ export const treatments: Treatment[] = [
       }
     ],
     metaTitle: 'Skin Tightening Bedford | ClearLift Pro | Clarity Clinic',
-    metaDescription: 'Non-invasive skin tightening with Alma Harmony ClearLift Pro in Bedford. No downtime, all skin types. Book your skin analysis with Claire Emmerson, RN.'
+    metaDescription: 'Non-invasive skin tightening with Alma Harmony ClearLift Pro in Bedford. No downtime, all skin types. Book your skin analysis with Claire Emmerson, Midwife & Aesthetic Nurse.'
   },
   {
     id: 'skin-resurfacing',
@@ -122,7 +122,7 @@ export const treatments: Treatment[] = [
       }
     ],
     metaTitle: 'Skin Resurfacing Bedford | Laser Treatment | Clarity Clinic',
-    metaDescription: 'Advanced laser skin resurfacing in Bedford with Alma Harmony. Improve texture, fine lines & wrinkles. Book your skin analysis with Claire Emmerson, RN.'
+    metaDescription: 'Advanced laser skin resurfacing in Bedford with Alma Harmony. Improve texture, fine lines & wrinkles. Book your skin analysis with Claire Emmerson, Midwife & Aesthetic Nurse.'
   },
   {
     id: 'pigmentation',
@@ -254,7 +254,7 @@ export const treatments: Treatment[] = [
       }
     ],
     metaTitle: 'Spider Vein & Rosacea Treatment Bedford | Clarity Clinic',
-    metaDescription: 'Remove spider veins, rosacea & facial redness in Bedford with Alma Harmony VascuPen & ClearVas laser. Book your skin analysis with Claire Emmerson, RN.'
+    metaDescription: 'Remove spider veins, rosacea & facial redness in Bedford with Alma Harmony VascuPen & ClearVas laser. Book your skin analysis with Claire Emmerson, Midwife & Aesthetic Nurse.'
   },
   {
     id: 'bio-boost',
@@ -298,7 +298,7 @@ export const treatments: Treatment[] = [
       }
     ],
     metaTitle: 'Bio-Boost Treatment Bedford | ELLE Award Winner | Clarity Clinic',
-    metaDescription: 'Experience the ELLE Award-winning Bio-Boost multi-laser treatment in Bedford. Visible results, zero downtime. Book your skin analysis with Claire Emmerson, RN.'
+    metaDescription: 'Experience the ELLE Award-winning Bio-Boost multi-laser treatment in Bedford. Visible results, zero downtime. Book your skin analysis with Claire Emmerson, Midwife & Aesthetic Nurse.'
   }
 ]
 

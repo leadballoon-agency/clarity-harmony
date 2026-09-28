@@ -30,7 +30,7 @@ export default function TreatmentsSection({ onBookingClick }: TreatmentsSectionP
             <span className="gradient-text"> Treatments</span>
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-neutral-600 max-w-2xl mx-auto px-4 leading-relaxed">
-            Alma Harmony treats a wide spectrum of skin concerns with one sophisticated platform. All treatments performed by Claire Emmerson, RN.
+            Alma Harmony treats a wide spectrum of skin concerns with one sophisticated platform. All treatments performed by Claire Emmerson, Midwife & Aesthetic Nurse.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function TreatmentsSection({ onBookingClick }: TreatmentsSectionP
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">Alma Harmony Skin Treatments</h3>
                 <p className="text-primary-600 font-medium mb-4">Comprehensive Skin Resurfacing & Rejuvenation</p>
                 <p className="text-neutral-600 max-w-2xl mx-auto">
-                  Award-winning multi-technology platform treating a wide range of skin concerns. From tightening and resurfacing to pigmentation and scarring - all performed by Claire Emmerson, RN.
+                  Award-winning multi-technology platform treating a wide range of skin concerns. From tightening and resurfacing to pigmentation and scarring - all performed by Claire Emmerson, Midwife & Aesthetic Nurse.
                 </p>
               </div>
 

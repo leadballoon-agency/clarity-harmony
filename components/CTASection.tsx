@@ -22,7 +22,7 @@ export default function CTASection({ onBookingClick }: CTASectionProps) {
         </h2>
 
         <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Book your professional skin analysis with Claire Emmerson, RN to discover how Alma Harmony&apos;s award-winning technology can help you achieve your skin goals.
+          Book your professional skin analysis with Claire Emmerson, Midwife & Aesthetic Nurse to discover how Alma Harmony&apos;s award-winning technology can help you achieve your skin goals.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
