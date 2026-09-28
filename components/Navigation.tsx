@@ -53,7 +53,7 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
       <nav className={`fixed w-full z-50 transition-all duration-500 ${
         isVisible ? 'top-0' : '-top-24'
       } ${
-        isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-ivory/95 backdrop-blur-md border-b border-sand-200 py-3' : 'bg-transparent py-5'
       }`}>
         <div className="max-w-7xl mx-auto section-padding">
           <div className="flex justify-between items-center">
@@ -61,16 +61,18 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
               <img
                 src="/clarity-clinic-logo.png"
                 alt="Clarity Clinic - Skin, Laser & Intimate Health"
-                className="h-12 w-auto"
+                width={1000}
+                height={160}
+                className="h-7 sm:h-8 w-auto"
               />
             </Link>
 
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-8 text-[15px]">
               {navItems.slice(0, 2).map((item) => (
                 <a
                   key={item}
                   href={`/#${item.toLowerCase()}`}
-                  className="font-medium transition-colors text-neutral-700 hover:text-primary-600"
+                  className="transition-colors text-harmony-700 hover:text-ink"
                 >
                   {item}
                 </a>
@@ -80,7 +82,7 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setIsTreatmentsOpen(!isTreatmentsOpen)}
-                  className="font-medium transition-colors text-neutral-700 hover:text-primary-600 flex items-center gap-1"
+                  className="transition-colors text-harmony-700 hover:text-ink flex items-center gap-1"
                 >
                   Treatments
                   <svg
@@ -94,7 +96,7 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
                 </button>
 
                 {isTreatmentsOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-neutral-100 py-2 z-50">
+                  <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-md border border-sand-200 py-2 z-50">
                     <div className="px-4 py-2 border-b border-neutral-100">
                       <p className="text-xs text-neutral-500 font-medium uppercase tracking-wider">Our Treatments</p>
                     </div>
@@ -103,9 +105,8 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
                         key={treatment.slug}
                         href={`/treatments/${treatment.slug}`}
                         onClick={() => setIsTreatmentsOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 hover:bg-primary-50 transition-colors"
+                        className="flex items-center gap-3 px-4 py-3 hover:bg-sand-50 transition-colors"
                       >
-                        <span className="text-xl">{treatment.icon}</span>
                         <div>
                           <p className="font-medium text-neutral-800 text-sm">{treatment.shortName}</p>
                           <p className="text-xs text-neutral-500">{treatment.technology}</p>
@@ -129,7 +130,7 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
                 <a
                   key={item}
                   href={`/#${item.toLowerCase()}`}
-                  className="font-medium transition-colors text-neutral-700 hover:text-primary-600"
+                  className="transition-colors text-harmony-700 hover:text-ink"
                 >
                   {item}
                 </a>
@@ -139,7 +140,7 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
             <div className="hidden md:flex items-center space-x-3">
               <button
                 onClick={handleBookingClick}
-                className="inline-flex bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
+                className="btn-primary !min-h-0 !py-2.5 !px-5 !text-sm"
               >
                 Book Skin Analysis
               </button>
@@ -165,7 +166,7 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
                     key={item}
                     href={`/#${item.toLowerCase()}`}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-neutral-700 hover:text-primary-600 font-medium py-2"
+                    className="text-harmony-700 hover:text-ink py-2"
                   >
                     {item}
                   </a>
@@ -175,7 +176,7 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
                 <div>
                   <button
                     onClick={() => setIsMobileTreatmentsOpen(!isMobileTreatmentsOpen)}
-                    className="w-full flex items-center justify-between text-neutral-700 hover:text-primary-600 font-medium py-2"
+                    className="w-full flex items-center justify-between text-harmony-700 hover:text-ink py-2"
                   >
                     Treatments
                     <svg
@@ -197,9 +198,8 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
                             setIsMobileMenuOpen(false)
                             setIsMobileTreatmentsOpen(false)
                           }}
-                          className="flex items-center gap-2 py-2 text-neutral-600 hover:text-primary-600"
+                          className="flex items-center gap-2 py-2 text-harmony-600 hover:text-ink"
                         >
-                          <span>{treatment.icon}</span>
                           <span className="text-sm">{treatment.shortName}</span>
                         </Link>
                       ))}
@@ -212,7 +212,7 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
                     key={item}
                     href={`/#${item.toLowerCase()}`}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-neutral-700 hover:text-primary-600 font-medium py-2"
+                    className="text-harmony-700 hover:text-ink py-2"
                   >
                     {item}
                   </a>
@@ -224,7 +224,7 @@ export default function Navigation({ onBookingClick }: NavigationProps) {
                       setIsMobileMenuOpen(false)
                       handleBookingClick()
                     }}
-                    className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-medium text-center w-full"
+                    className="btn-primary w-full"
                   >
                     Book Skin Analysis
                   </button>

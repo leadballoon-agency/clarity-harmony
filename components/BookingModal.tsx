@@ -40,11 +40,11 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
       />
 
       {/* Modal */}
-      <div className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-w-2xl w-full max-h-[95vh] overflow-y-auto animate-modal-slide-up">
+      <div className="relative bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[95vh] overflow-y-auto animate-modal-slide-up">
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center hover:bg-white transition-colors z-10 shadow-lg"
+          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white border border-sand-200 flex items-center justify-center hover:bg-sand-50 transition-colors z-10"
         >
           <svg className="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -52,12 +52,13 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         </button>
 
         {/* Header */}
-        <div className="bg-gradient-to-r from-primary-500 to-primary-600 p-6 sm:p-8 text-white rounded-t-2xl sm:rounded-t-3xl">
-          <h2 className="font-display text-2xl sm:text-3xl font-bold mb-2">
-            Book Your Skin Analysis
+        <div className="bg-ivory border-b border-sand-200 p-6 sm:p-8 pr-16 rounded-t-2xl">
+          <p className="eyebrow mb-3">Skin Analysis</p>
+          <h2 className="font-display font-normal text-[26px] sm:text-[30px] leading-[1.15] text-ink mb-2">
+            Book your <em className="italic">skin analysis</em>
           </h2>
-          <p className="text-white/90 text-sm sm:text-base">
-            Professional skin assessment with Claire Emmerson, RN
+          <p className="text-harmony-600 text-sm sm:text-base">
+            Professional skin assessment with Claire&nbsp;Emmerson, Midwife &amp; Aesthetic Nurse
           </p>
         </div>
 
@@ -99,15 +100,15 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           )}
 
           {/* Consultation Info */}
-          <div className="bg-primary-50 rounded-xl p-4 mb-4">
+          <div className="bg-sand-50 border border-sand-200 rounded-xl p-4 mb-4">
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-white border border-sand-200 rounded-full flex items-center justify-center flex-shrink-0">
                 <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className="font-semibold text-neutral-800 mb-1">
+                <h3 className="font-sans font-medium text-[15px] text-ink mb-1">
                   {consultationType === 'video' ? 'Video Skin Analysis' : 'In-Person Skin Analysis'}: £{siteConfig.consultationFee}
                 </h3>
                 <p className="text-sm text-neutral-600">
@@ -122,7 +123,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           </div>
 
           {/* Embedded Booking Calendar */}
-          <div className="rounded-xl overflow-hidden bg-neutral-50 min-h-[500px] relative">
+          <div className="rounded-xl overflow-hidden bg-sand-50 min-h-[500px] relative">
             {!scriptLoaded && (
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">

@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { ChevronDown, Star } from 'lucide-react'
+import { tidy } from '@/lib/typography'
 
 const reviews = [
   {
@@ -55,118 +57,99 @@ const reviews = [
   },
 ]
 
+function Stars({ className = 'w-3.5 h-3.5' }: { className?: string }) {
+  return (
+    <div className="flex gap-0.5" aria-label="5 out of 5 stars">
+      {[...Array(5)].map((_, i) => (
+        <Star key={i} className={`${className} text-amber-500`} fill="currentColor" strokeWidth={0} />
+      ))}
+    </div>
+  )
+}
+
 export default function SkinResetReviews() {
   const [showAll, setShowAll] = useState(false)
   const displayedReviews = showAll ? reviews : reviews.slice(0, 4)
 
   return (
-    <section className="py-16 sm:py-20 md:py-28 bg-gradient-to-b from-white to-primary-50">
-      <div className="max-w-7xl mx-auto section-padding">
+    <section className="py-20 sm:py-24 lg:py-28 bg-white border-t border-sand-200">
+      <div className="max-w-6xl mx-auto section-padding">
         {/* Header */}
-        <div className="text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <svg className="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg>
-            <span className="text-lg font-semibold text-neutral-800">4.9</span>
-            <span className="text-neutral-500">from 64+ reviews on Google</span>
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+          <div className="inline-flex items-center gap-3 text-sm">
+            <Stars />
+            <span className="font-medium text-ink">4.9</span>
+            <span className="text-harmony-500">from 64+ reviews on Google</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
-            What Our
-            <span className="block gradient-text">Patients Say</span>
+          <h2 className="h2-display mt-5">
+            What our <em className="italic">patients say</em>
           </h2>
-          <p className="text-neutral-600 mt-4 max-w-2xl mx-auto">
-            Real reviews from real patients who have experienced Claire&apos;s care at Clarity Clinic Bedford
+          <p className="text-harmony-600 mt-4 leading-relaxed">
+            Real reviews from real patients who have experienced Claire&apos;s care at Clarity&nbsp;Clinic&nbsp;Bedford
           </p>
         </div>
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {displayedReviews.map((review, index) => (
-            <div
+            <figure
               key={index}
-              className="bg-white rounded-2xl p-5 sm:p-6 shadow-premium hover:shadow-premium-lg transition-shadow duration-300"
+              className="bg-ivory border border-sand-200 rounded-xl p-6 sm:p-7 flex flex-col"
             >
-              {/* Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white font-bold text-lg">
-                    {review.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-semibold text-neutral-800">{review.name}</h3>
-                      {review.badge && (
-                        <span className="text-[10px] bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full font-medium">
-                          {review.badge}
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-xs text-neutral-500">{review.date}</p>
-                  </div>
-                </div>
-                {/* Stars */}
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className="w-4 h-4 text-yellow-400"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                  ))}
-                </div>
-              </div>
+              <Stars />
+              <blockquote className="mt-4 text-[15px] sm:text-base text-harmony-700 leading-relaxed">
+                &ldquo;{tidy(review.text)}&rdquo;
+              </blockquote>
 
-              {/* Review Text */}
-              <p className="text-neutral-700 text-sm sm:text-base leading-relaxed mb-4">
-                &ldquo;{review.text}&rdquo;
-              </p>
+              <figcaption className="mt-5 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-sand-100 border border-sand-200 flex items-center justify-center font-display text-ink">
+                  {review.name.charAt(0)}
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-ink">
+                    {review.name}
+                    {review.badge && (
+                      <span className="ml-2 text-xs font-normal text-harmony-500">· {review.badge}</span>
+                    )}
+                  </p>
+                  <p className="text-xs text-harmony-500">{review.date}</p>
+                </div>
+              </figcaption>
 
-              {/* Response */}
               {review.response && (
-                <div className="bg-primary-50 rounded-xl p-4 border-l-4 border-primary-400">
-                  <p className="text-xs font-medium text-primary-700 mb-1">Response from Claire</p>
-                  <p className="text-sm text-neutral-600 leading-relaxed">
-                    {review.response}
+                <div className="mt-5 pt-4 border-t border-sand-200">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-harmony-500 mb-1.5">Response from Claire</p>
+                  <p className="text-sm text-harmony-600 leading-relaxed">
+                    {tidy(review.response)}
                   </p>
                 </div>
               )}
-            </div>
+            </figure>
           ))}
         </div>
 
         {/* Show More Button */}
         {reviews.length > 4 && (
-          <div className="text-center mt-8">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-primary-500 text-primary-600 rounded-full font-medium hover:bg-primary-50 transition-colors"
-            >
+          <div className="text-center mt-10">
+            <button onClick={() => setShowAll(!showAll)} className="btn-outline">
               {showAll ? 'Show Less' : `Show All ${reviews.length} Reviews`}
-              <svg
+              <ChevronDown
                 className={`w-4 h-4 transition-transform ${showAll ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-              </svg>
+                strokeWidth={1.5}
+              />
             </button>
           </div>
         )}
 
         {/* Google Review CTA */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <a
             href="https://www.google.com/search?q=clarity+clinic+bedford+reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-primary-600 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-harmony-500 hover:text-ink underline-offset-4 hover:underline transition-colors"
           >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <svg className="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
               <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
               <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>

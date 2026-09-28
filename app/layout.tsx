@@ -1,16 +1,18 @@
 import type { Metadata } from 'next'
-import { Open_Sans, Montserrat } from 'next/font/google'
+import { Inter, Fraunces } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 
-const openSans = Open_Sans({
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 })
 
-const montserrat = Montserrat({
+const fraunces = Fraunces({
   subsets: ['latin'],
+  style: ['normal', 'italic'],
+  axes: ['opsz'],
   variable: '--font-display',
   display: 'swap',
 })
@@ -18,10 +20,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.laserbedford.co.uk'),
   title: {
-    default: 'Alma Harmony Bedford | Advanced Skin Resurfacing by Registered Nurse Claire Emmerson',
+    default: 'Alma Harmony Bedford | Advanced Skin Resurfacing by Midwife & Aesthetic Nurse Claire Emmerson',
     template: '%s | Alma Harmony Bedford'
   },
-  description: 'Award-winning Alma Harmony skin resurfacing in Bedford. CQC registered, nurse-led clinic specialising in skin rejuvenation, pigmentation, vascular lesions, and hair removal. Simply intelligent treatments.',
+  description: 'Award-winning Alma Harmony skin resurfacing in Bedford. CQC registered, midwife & nurse-led clinic specialising in skin rejuvenation, pigmentation, vascular lesions, and hair removal. Simply intelligent treatments.',
   keywords: [
     'Alma Harmony Bedford',
     'skin resurfacing Bedford',
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
     ],
     shortcut: '/images/favicon.png'
   },
-  authors: [{ name: 'Claire Emmerson, RN' }],
+  authors: [{ name: 'Claire Emmerson, Midwife & Aesthetic Nurse' }],
   creator: 'Clarity Clinic',
   publisher: 'Clarity Clinic',
   formatDetection: {
@@ -56,8 +58,8 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Alma Harmony Bedford | Advanced Skin Resurfacing by Registered Nurse Claire Emmerson',
-    description: 'Award-winning Alma Harmony skin resurfacing in Bedford. CQC registered, nurse-led clinic. Multi-technology platform for comprehensive skin treatments. Book your consultation today - £25 fully redeemable.',
+    title: 'Alma Harmony Bedford | Advanced Skin Resurfacing by Midwife & Aesthetic Nurse Claire Emmerson',
+    description: 'Award-winning Alma Harmony skin resurfacing in Bedford. CQC registered, midwife & nurse-led clinic. Multi-technology platform for comprehensive skin treatments. Book your consultation today - £25 fully redeemable.',
     url: 'https://www.laserbedford.co.uk',
     siteName: 'Alma Harmony Bedford - Clarity Clinic',
     images: [
@@ -73,8 +75,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Alma Harmony Bedford | Advanced Skin Resurfacing by Registered Nurse Claire Emmerson',
-    description: 'Award-winning Alma Harmony skin resurfacing in Bedford. CQC registered, nurse-led clinic. Multi-technology platform for comprehensive skin treatments.',
+    title: 'Alma Harmony Bedford | Advanced Skin Resurfacing by Midwife & Aesthetic Nurse Claire Emmerson',
+    description: 'Award-winning Alma Harmony skin resurfacing in Bedford. CQC registered, midwife & nurse-led clinic. Multi-technology platform for comprehensive skin treatments.',
     images: ['/images/ba/laser-skin-rejeuvenation.jpeg'],
   },
   robots: {
@@ -99,7 +101,7 @@ const structuredData = {
       name: 'Clarity Clinic - Alma Harmony Bedford',
       image: 'https://www.laserbedford.co.uk/images/ba/laser-skin-rejeuvenation.jpeg',
       logo: 'https://www.laserbedford.co.uk/clarity-clinic-logo.png',
-      description: 'CQC registered nurse-led aesthetic clinic in Bedford specialising in Alma Harmony skin resurfacing treatments. Award-winning technology for skin tightening, rejuvenation, pigmentation, acne scarring and vascular concerns. All treatments performed by Claire Emmerson, RN.',
+      description: 'CQC registered, midwife & nurse-led aesthetic clinic in Bedford specialising in Alma Harmony skin resurfacing treatments. Award-winning technology for skin tightening, rejuvenation, pigmentation, acne scarring and vascular concerns. All treatments performed by Claire Emmerson, Midwife & Aesthetic Nurse.',
       url: 'https://www.laserbedford.co.uk',
       telephone: '+447414154007',
       email: 'info@claritycosmetics.co.uk',
@@ -157,9 +159,9 @@ const structuredData = {
       name: 'Claire Emmerson',
       givenName: 'Claire',
       familyName: 'Emmerson',
-      jobTitle: 'Registered Nurse & Advanced Aesthetic Practitioner',
+      jobTitle: 'Midwife & Aesthetic Nurse, Independent Prescriber',
       image: 'https://www.laserbedford.co.uk/images/practitioner.jpg',
-      description: 'Registered Nurse and Midwife with over 10 years of experience, specialising in Alma Harmony skin resurfacing and aesthetic treatments. CQC registered Independent Prescriber offering nurse-led skin treatments in Bedford.',
+      description: 'Midwife and aesthetic nurse with over 10 years of experience, specialising in Alma Harmony skin resurfacing and aesthetic treatments. CQC registered Independent Prescriber offering nurse-led skin treatments in Bedford.',
       worksFor: {
         '@id': 'https://www.laserbedford.co.uk/#medicalbusiness',
       },
@@ -294,7 +296,7 @@ const structuredData = {
             itemOffered: {
               '@type': 'Service',
               name: 'Consultation',
-              description: 'Full skin assessment and personalised treatment plan with Claire Emmerson, RN. Fee fully redeemable against treatment.',
+              description: 'Full skin assessment and personalised treatment plan with Claire Emmerson, Midwife & Aesthetic Nurse. Fee fully redeemable against treatment.',
             },
             priceSpecification: {
               '@type': 'PriceSpecification',
@@ -310,7 +312,7 @@ const structuredData = {
       '@id': 'https://www.laserbedford.co.uk/#website',
       url: 'https://www.laserbedford.co.uk',
       name: 'Alma Harmony Bedford - Clarity Clinic',
-      description: 'Award-winning Alma Harmony skin resurfacing in Bedford. CQC registered, nurse-led clinic.',
+      description: 'Award-winning Alma Harmony skin resurfacing in Bedford. CQC registered, midwife & nurse-led clinic.',
       publisher: {
         '@id': 'https://www.laserbedford.co.uk/#medicalbusiness',
       },
@@ -325,7 +327,7 @@ const structuredData = {
       '@type': 'WebPage',
       '@id': 'https://www.laserbedford.co.uk/#webpage',
       url: 'https://www.laserbedford.co.uk',
-      name: 'Alma Harmony Bedford | Advanced Skin Resurfacing by Registered Nurse Claire Emmerson',
+      name: 'Alma Harmony Bedford | Advanced Skin Resurfacing by Midwife & Aesthetic Nurse Claire Emmerson',
       isPartOf: {
         '@id': 'https://www.laserbedford.co.uk/#website',
       },
@@ -427,7 +429,7 @@ const structuredData = {
         price: '25',
         availability: 'https://schema.org/InStock',
         name: 'Skin Analysis',
-        description: 'Professional skin assessment with Claire Emmerson, RN - FREE when you proceed with treatment',
+        description: 'Professional skin assessment with Claire Emmerson, Midwife & Aesthetic Nurse - FREE when you proceed with treatment',
       },
       aggregateRating: {
         '@type': 'AggregateRating',
@@ -479,7 +481,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className={`${openSans.variable} ${montserrat.variable} font-sans`}>
+      <body className={`${inter.variable} ${fraunces.variable} font-sans`}>
         {children}
         <Script
           src="https://followupsystems.co.uk/widget.js"

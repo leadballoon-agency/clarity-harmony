@@ -4,7 +4,7 @@ import SkinResetPageWrapper from '@/components/skin-reset/SkinResetPageWrapper'
 
 export const metadata: Metadata = {
   title: 'Skin Reset | Alma Harmony SupErb Fractional Laser | Clarity Clinic Bedford',
-  description: 'Alma Harmony SupErb fractional laser resurfacing designed for women ready to reclaim their skin. Smooth texture, brighter tone, reduced pigmentation, softened lines. CQC registered, nurse-led. Bedford.',
+  description: 'Alma Harmony SupErb fractional laser resurfacing designed for women ready to reclaim their skin. Smooth texture, brighter tone, reduced pigmentation, softened lines. CQC registered, midwife & nurse-led. Bedford.',
   keywords: [
     'skin reset',
     'Alma Harmony SupErb Bedford',
@@ -27,7 +27,7 @@ const skinResetSchema = {
   '@context': 'https://schema.org',
   '@type': 'MedicalBusiness',
   name: 'Clarity Clinic Bedford',
-  description: 'Alma Harmony SupErb fractional laser treatments for skin rejuvenation. CQC registered, nurse-led clinic in Bedford.',
+  description: 'Alma Harmony SupErb fractional laser treatments for skin rejuvenation. CQC registered, midwife & nurse-led clinic in Bedford.',
   url: 'https://www.laserbedford.co.uk',
   telephone: '+447414154007',
   address: {
