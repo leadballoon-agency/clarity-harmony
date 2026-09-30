@@ -12,6 +12,25 @@
     @apply antialiased bg-ivory text-harmony-700;
     font-feature-settings: 'cv11', 'ss01';
     text-rendering: optimizeLegibility;
+
+    /* Follow Up Systems widget (assessment inline, its overlay and launcher):
+       this site's own type and colours. On body, where the font variables live. */
+    --fus-font-display: var(--font-display), Georgia, 'Times New Roman', serif;
+    --fus-font-body: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --fus-ink: #1d2433;
+    --fus-muted: #475569;
+    --fus-surface: #f7f4ef;
+    --fus-surface-raised: #faf8f4;
+    --fus-line: #e4ddd2;
+    --fus-line-strong: #d3c9ba;
+    --fus-accent: #003d99;
+    --fus-accent-text: #003d99;
+    --fus-shadow: 0 2px 12px rgba(29, 36, 51, 0.06);
+    --fus-radius: 12px;
+    --fus-question-font: var(--font-display), Georgia, 'Times New Roman', serif;
+    --fus-question-weight: 400;
+    --fus-button-case: none;
+    --fus-button-tracking: 0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
