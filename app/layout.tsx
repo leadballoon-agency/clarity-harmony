@@ -487,6 +487,7 @@ export default function RootLayout({
           src="https://followupsystems.co.uk/widget.js"
           data-key="35e952215fb8e9a5efe2c565cc8cd8d7"
           data-project="cmmm8204r0000afhjqmumzs4g"
+          data-mode="assessment"
           strategy="afterInteractive"
         />
       </body>
